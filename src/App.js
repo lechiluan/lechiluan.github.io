@@ -8,16 +8,8 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Coming Soon!!!</h1>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          I want to build a website that will help you to learn programming.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );

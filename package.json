@@ -1,13 +1,14 @@
 {
-  "homepage": "https://chiluan.live/",
-  "name": "vite-project",
+  "homepage": "lechiluan.github.io",
+  "name": "lechiluan.github.io",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "build": "vite build",
+    "preview": "vite preview",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d dist"
   },

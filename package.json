@@ -1,5 +1,5 @@
 {
-  "name": "portfolio-app",
+  "name": "lechiluan.github.io",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "gh-pages -d out"
+    "deploy": "gh-pages -d out -b gh-pages"
   },
   "dependencies": {
     "@radix-ui/react-dropdown-menu": "^2.1.15",

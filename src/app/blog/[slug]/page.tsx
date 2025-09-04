@@ -1,9 +1,17 @@
-
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
+
+export async function generateStaticParams() {
+  const postsDirectory = path.join(process.cwd(), 'src', 'posts');
+  const filenames = fs.readdirSync(postsDirectory);
+
+  return filenames.map((filename) => ({
+    slug: filename.replace(/\.md$/, ''),
+  }));
+}
 
 const PostPage = async ({ params }: { params: { slug: string } }) => {
   const postsDirectory = path.join(process.cwd(), 'src', 'posts');

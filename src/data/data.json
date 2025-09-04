@@ -1,0 +1,142 @@
+{
+  "hero": {
+    "name": "Lê Chí Luân",
+    "title": "Junior Software Engineer",
+    "bio": "As a dedicated Software Engineer with a strong focus on backend development, I am eager to contribute to your company's success by leveraging my full-stack experience. I have hands-on experience building and optimizing large-scale e-commerce and accounting systems, working with technologies such as Node.js, FastAPI, Python, React, and Elixir. Driven by a passion for continuous learning, I consistently aim to improve system performance, streamline database operations, and deliver scalable solutions. I look forward to applying my problem-solving skills and technical expertise to develop high-quality software that drives meaningful business outcomes.",
+    "profileImage": "https://avatars.githubusercontent.com/u/83630945" 
+  },
+  "about": {
+    "description": "Hello! I'm Lê Chí Luân, a software engineer with a strong foundation in web development. My journey in tech began with a fascination for how digital products come to life, leading me to dive deep into various programming languages and frameworks. Over the years, I've honed my skills in front-end and back-end development, working with technologies like React, Next.js, Node.js, and various databases. I thrive in environments where I can solve complex problems and contribute to impactful projects. When I'm not coding, you can find me exploring new tech trends, contributing to open-source projects, or enjoying outdoor activities. I believe in continuous learning and always strive to improve my craft."
+  },
+  "skills": [
+    "Python",
+    "JavaScript",
+    "Elixir",
+    "PHP",
+    "TypeScript",
+    "Django",
+    "React",
+    "Bootstrap",
+    "Phoenix",
+    "Pandas",
+    "FastAPI",
+    "PostgreSQL",
+    "MySQL",
+    "MongoDB",
+    "Redis",
+    "RabbitMQ",
+    "Elasticsearch",
+    "GitHub",
+    "Ubuntu",
+    "RESTful",
+    "Node.js",
+    "Heroku",
+    "Railway"
+  ],
+  "projects": [
+    {
+      "name": "E-commerce System with Chatbot Integration",
+      "image": "https://placehold.co/500x300/png?text=Project+1",
+      "description": "Developed an e-commerce system for selling technology devices with chatbot integration and data analysis (Final Year Project). Features include email authentication, product recommendations, export invoice, and chatbots. For owners, it offers product management, data export, sales statistics, and profit forecasting.",
+      "link": "https://github.com/lechiluan/ecommerce"
+    },
+    {
+      "name": "Opollo - SaaS E-commerce System",
+      "image": "https://placehold.co/500x300/png?text=Project+2",
+      "description": "Part of OnPoint E-commerce. A SaaS system connecting various third-party e-commerce platforms (Shopee, Tiktok Shop, Lazada, Tiki) into a single system for managing orders, products, channels, inventory, customer service, and purchase orders. Technologies: React, JavaScript, TypeScript, Python, Elixir, PostgreSQL, MongoDB, RabbitMQ, Redis, Elasticsearch, GitHub.",
+      "link": "#"
+    },
+    {
+      "name": "Iris - Chat Service Microservice",
+      "image": "https://placehold.co/500x300/png?text=Project+3",
+      "description": "Part of OnPoint E-commerce. A chat service system separated from Opollo into a microservice to connect customer services between e-commerce platforms and the Opollo system. Technologies: Elixir, PostgreSQL.",
+      "link": "#"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Software Engineer",
+      "company": "Yes4All",
+      "duration": "Nov 2024 - Present",
+      "responsibilities": [
+        "Developed and maintained backend systems using Node.js (JavaScript) for SOMS (Sale Order Management System).",
+        "Implemented Kafka to communicate with other services in the system.",
+        "Integrated and interacted with Amazon Vendor Central API.",
+        "Collaborated with frontend developers, testers, and other backend engineers to ensure seamless integration of features."
+      ]
+    },
+    {
+      "title": "Backend Developer (Freelance)",
+      "company": "Finpal",
+      "duration": "Nov 2024 – April 2025",
+      "responsibilities": [
+        "Built a separate service from the current system.",
+        "Designed and developed APIs using FastAPI (Python).",
+        "Connected and integrated AI models into the backend system.",
+        "Optimized database queries to improve performance.",
+        "Deployed servers on AWS EC2 with Ubuntu.",
+        "Managed and configured Nginx servers.",
+        "Automated CI/CD processes using GitHub Actions."
+      ]
+    },
+    {
+      "title": "Junior Software Engineer",
+      "company": "OnPoint E-commerce",
+      "duration": "Mar 2024 - Sep 2024",
+      "responsibilities": [
+        "Improved performance, optimized and developed new features for Opollo and Iris projects."
+      ]
+    },
+    {
+      "title": "Fresher Software Engineer",
+      "company": "IVS Joint Stock Company",
+      "duration": "Oct 2023 - February 2024",
+      "responsibilities": [
+        "Developed an accounting software project for a large construction corporation in Japan as Full Stack Developer.",
+        "Contributed to system development including analyzing requirements, supporting prototypes (use Figma) drawing, writing basic design for the system, and full-stack programming for the project.",
+        "Technology used: RESTful API, .NET, JavaScript, GitLab."
+      ]
+    },
+    {
+      "title": "Intern Software Engineer",
+      "company": "IVS Joint Stock Company",
+      "duration": "Aug - Sep 2023",
+      "responsibilities": [
+        "Learned about the business processes of warehouse management software and human resource management.",
+        "Gained insights into the Japanese work culture, teamwork skills, and logical thinking."
+      ]
+    },
+    {
+      "title": "Intern Customer Success Engineer (Remote)",
+      "company": "GCalls company",
+      "duration": "May - Sep 2023",
+      "responsibilities": [
+        "Trained in work processes and operations with colleagues and customers.",
+        "Received training and practice on becoming a Full Stack Developer with JavaScript libraries such as ReactJS, NodeJS, ExpressJS, and MongoDB, GitLab.",
+        "Deployed a project on Ubuntu Server and Cloudflare."
+      ]
+    },
+    {
+      "title": "Intern Python Developer",
+      "company": "BIWOCO company",
+      "duration": "April - May 2023",
+      "responsibilities": [
+        "Contributed to an Australian government project using Python libraries such as Natural Language Processing (NLP), Pandas, Justext, and Summy, to scrape data from a website for analysis.",
+        "Used scraped data to develop an API for the system using FastAPI."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Science (BSc Hons) in Computing",
+      "institution": "University of Greenwich (UK)",
+      "duration": "July 2019 - October 2023",
+      "notes": "Graduated with First Class Honors – GPA: 76%."
+    }
+  ],
+  "contact": {
+    "email": "chiluan6601@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/lechiluan",
+    "github": "https://github.com/lechiluan"
+  }
+}

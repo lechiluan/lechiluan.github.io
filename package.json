@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "predeploy": "npm run build && npm run export && touch out/.nojekyll",
+    "predeploy": "npm run build && node -e \"require('fs').closeSync(require('fs').openSync('out/.nojekyll', 'w'))\"",
     "deploy": "gh-pages -d out --dotfiles"
   },
   "dependencies": {

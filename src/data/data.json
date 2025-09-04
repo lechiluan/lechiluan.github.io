@@ -1,12 +1,12 @@
 {
   "hero": {
-    "name": "Lê Chí Luân",
+    "name": "Le Chi Luan",
     "title": "Junior Software Engineer",
     "bio": "As a dedicated Software Engineer with a strong focus on backend development, I am eager to contribute to your company's success by leveraging my full-stack experience. I have hands-on experience building and optimizing large-scale e-commerce and accounting systems, working with technologies such as Node.js, FastAPI, Python, React, and Elixir. Driven by a passion for continuous learning, I consistently aim to improve system performance, streamline database operations, and deliver scalable solutions. I look forward to applying my problem-solving skills and technical expertise to develop high-quality software that drives meaningful business outcomes.",
     "profileImage": "https://avatars.githubusercontent.com/u/83630945" 
   },
   "about": {
-    "description": "Hello! I'm Lê Chí Luân, a software engineer with a strong foundation in web development. My journey in tech began with a fascination for how digital products come to life, leading me to dive deep into various programming languages and frameworks. Over the years, I've honed my skills in front-end and back-end development, working with technologies like React, Next.js, Node.js, and various databases. I thrive in environments where I can solve complex problems and contribute to impactful projects. When I'm not coding, you can find me exploring new tech trends, contributing to open-source projects, or enjoying outdoor activities. I believe in continuous learning and always strive to improve my craft."
+    "description": "Hello! I'm Le Chi Luan, a software engineer with a strong foundation in web development. My journey in tech began with a fascination for how digital products come to life, leading me to dive deep into various programming languages and frameworks. Over the years, I've honed my skills in front-end and back-end development, working with technologies like React, Next.js, Node.js, and various databases. I thrive in environments where I can solve complex problems and contribute to impactful projects. When I'm not coding, you can find me exploring new tech trends, contributing to open-source projects, or enjoying outdoor activities. I believe in continuous learning and always strive to improve my craft."
   },
   "skills": [
     "Python",

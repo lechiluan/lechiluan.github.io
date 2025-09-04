@@ -175,7 +175,7 @@ export default function Home() {
       <section id="contact" className="w-full max-w-5xl mt-20 py-16 bg-card rounded-lg shadow-xl px-8">
         <h2 className="text-4xl font-bold text-center mb-10 text-primary">Contact Me</h2>
         <div className="text-center text-lg text-card-foreground space-y-4">
-          <p>I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
+          <p>I am always open to new opportunities and collaborations. Feel free to reach out!</p>
           <p>Email: <a href={`mailto:${data.contact.email}`} className="text-primary hover:underline">{data.contact.email}</a></p>
           <p>LinkedIn: <a href={data.contact.linkedin} className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">{data.contact.linkedin}</a></p>
           <p>GitHub: <a href={data.contact.github} className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">{data.contact.github}</a></p>

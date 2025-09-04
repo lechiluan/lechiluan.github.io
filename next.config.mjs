@@ -13,6 +13,8 @@ const nextConfig = {
     ],
     unoptimized: true,
   },
+  basePath: "/lechiluan.github.io",
+  assetPrefix: "/lechiluan.github.io/",
 };
 
 export default nextConfig;

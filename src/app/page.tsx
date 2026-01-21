@@ -4,6 +4,8 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import Link from 'next/link';
+import { calculateDuration, formatDateRange } from '../utils/dateUtils';
+import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 
 export default function Home() {
   const postsDirectory = path.join(process.cwd(), 'src', 'posts');
@@ -40,9 +42,9 @@ export default function Home() {
           <p className="text-2xl mt-3 font-light text-muted-foreground">
             {data.hero.title}
           </p>
-            <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground text-justify">
+          <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground text-justify">
             {data.hero.bio}
-            </p>
+          </p>
           <div className="mt-10 flex space-x-6">
             <a
               href="#projects"
@@ -60,22 +62,110 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Me Section */}
-      <section id="about" className="w-full max-w-5xl mt-20 py-16 bg-card rounded-lg shadow-xl px-8">
-        <h2 className="text-4xl font-bold text-center mb-10 text-primary">About Me</h2>
-        <div className="text-lg leading-relaxed text-card-foreground space-y-6">
-          <p>
-            {data.about.description}
-          </p>
+      {/* Education Section */}
+      <section id="education" className="w-full max-w-5xl mt-10 p-8 bg-card rounded-lg shadow-xl">
+        <h2 className="text-4xl font-bold text-center mb-10 text-primary">Education</h2>
+        <div className="space-y-6">
+          {data.education.map((edu, index) => (
+            <div key={index} className="flex gap-4 p-6 bg-background rounded-lg border border-transparent hover:border-primary/50 hover:bg-accent/5 hover:shadow-lg transition-all duration-300">
+              {/* School Logo */}
+              <div className="flex-shrink-0">
+                <Image
+                  src={edu.logo}
+                  alt={edu.institution}
+                  width={80}
+                  height={80}
+                  className="rounded-lg object-cover border border-border"
+                />
+              </div>
+
+              {/* Education Details */}
+              <div className="flex-grow">
+                {/* Degree */}
+                <h3 className="text-xl font-semibold text-foreground mb-1">
+                  {edu.degree}
+                </h3>
+
+                {/* Institution Name */}
+                <p className="text-lg text-foreground mb-2">
+                  {edu.institution}
+                </p>
+
+                {/* Duration */}
+                <div className="text-sm text-muted-foreground mb-2">
+                  {edu.duration}
+                </div>
+
+                {/* Notes/Honors */}
+                <p className="text-base text-card-foreground">
+                  {edu.notes}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Experience Section */}
+      <section id="experience" className="w-full max-w-5xl mt-10 bg-card rounded-lg shadow-xl p-8">
+        <h2 className="text-4xl font-bold text-center mb-10 text-primary">Experience</h2>
+        <div className="space-y-6">
+          {data.experience.map((exp, index) => (
+            <div key={index} className="flex gap-4 p-6 bg-background rounded-lg border border-transparent hover:border-primary/50 hover:bg-accent/5 hover:shadow-lg transition-all duration-300">
+              {/* Company Logo */}
+              <div className="flex-shrink-0">
+                <Image
+                  src={exp.image}
+                  alt={exp.company}
+                  width={80}
+                  height={80}
+                  className="rounded-lg object-cover border border-border"
+                />
+              </div>
+
+              {/* Experience Details */}
+              <div className="flex-grow">
+                {/* Job Title */}
+                <h3 className="text-xl font-semibold text-foreground mb-1">
+                  {exp.title}
+                </h3>
+
+                {/* Company Name */}
+                <p className="text-lg text-foreground mb-2">
+                  {exp.company}
+                </p>
+
+                {/* Date Range and Duration */}
+                <div className="text-sm text-muted-foreground mb-1">
+                  {formatDateRange(exp.startDate, exp.endDate)} · {calculateDuration(exp.startDate, exp.endDate)}
+                </div>
+
+                {/* Location and Employment Type */}
+                <div className="text-sm text-muted-foreground mb-3">
+                  {exp.location} · {exp.employmentType}
+                </div>
+
+                {/* Responsibilities */}
+                <ul className="space-y-2 text-base text-card-foreground">
+                  {exp.responsibilities.map((responsibility, i) => (
+                    <li key={i} className="flex gap-2">
+                      <span className="text-muted-foreground mt-0.5">•</span>
+                      <span>{responsibility}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="w-full max-w-5xl mt-20 py-16 bg-card rounded-lg shadow-xl px-8">
+      <section id="skills" className="w-full max-w-5xl mt-10 bg-card rounded-lg shadow-xl p-8">
         <h2 className="text-4xl font-bold text-center mb-10 text-primary">Skills</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 text-center">
           {data.skills.map((skill, index) => (
-            <div key={index} className="p-4 bg-secondary rounded-lg shadow-md hover:bg-muted transition duration-300">
+            <div key={index} className="p-4 bg-secondary rounded-lg border border-transparent hover:border-primary/50 hover:bg-accent/10 shadow-md transition duration-300">
               <h3 className="text-xl font-semibold text-secondary-foreground">{skill}</h3>
             </div>
           ))}
@@ -83,11 +173,11 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="w-full max-w-5xl mt-20 py-16 bg-card rounded-lg shadow-xl px-8">
+      <section id="projects" className="w-full max-w-5xl mt-10 bg-card rounded-lg shadow-xl p-8">
         <h2 className="text-4xl font-bold text-center mb-10 text-primary">Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {data.projects.map((project, index) => (
-            <div key={index} className="bg-background rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
+            <div key={index} className="bg-background rounded-lg border border-transparent hover:border-primary/50 shadow-md overflow-hidden transform hover:scale-[1.02] transition duration-300">
               <Image
                 src={project.image}
                 alt={project.name}
@@ -116,11 +206,11 @@ export default function Home() {
       </section>
 
       {/* Blog Section */}
-      <section id="blog" className="w-full max-w-5xl mt-20 py-16 bg-card rounded-lg shadow-xl px-8">
+      <section id="blog" className="w-full max-w-5xl mt-10 bg-card rounded-lg shadow-xl p-8">
         <h2 className="text-4xl font-bold text-center mb-10 text-primary">Recent Posts</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {posts.map((post) => (
-            <Link key={post.slug} href={`/blog/${post.slug}`} className="bg-background rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
+            <Link key={post.slug} href={`/blog/${post.slug}`} className="bg-background rounded-lg border border-transparent hover:border-primary/50 shadow-md overflow-hidden transform hover:scale-[1.02] transition duration-300">
               <Image
                 src={`https://picsum.photos/seed/${post.slug}/500/300`}
                 alt={post.title}
@@ -139,46 +229,63 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Experience Section */}
-      <section id="experience" className="w-full max-w-5xl mt-20 py-16 bg-card rounded-lg shadow-xl px-8">
-        <h2 className="text-4xl font-bold text-center mb-10 text-primary">Experience</h2>
-        <div className="space-y-8 text-lg text-card-foreground">
-          {data.experience.map((exp, index) => (
-            <div key={index}>
-              <h3 className="text-2xl font-semibold text-foreground">{exp.title} - {exp.company}</h3>
-              <p className="text-muted-foreground">{exp.duration}</p>
-              <ul className="list-disc list-inside mt-2 space-y-1">
-                {exp.responsibilities.map((responsibility, i) => (
-                  <li key={i}>{responsibility}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Education Section */}
-      <section id="education" className="w-full max-w-5xl mt-20 py-16 bg-card rounded-lg shadow-xl px-8">
-        <h2 className="text-4xl font-bold text-center mb-10 text-primary">Education</h2>
-        <div className="space-y-8 text-lg text-card-foreground">
-          {data.education.map((edu, index) => (
-            <div key={index}>
-              <h3 className="text-2xl font-semibold text-foreground">{edu.degree}</h3>
-              <p className="text-muted-foreground">{edu.institution} - {edu.duration}</p>
-              <p className="mt-2">{edu.notes}</p>
-            </div>
-          ))}
+      {/* About Me Section */}
+      <section id="about" className="w-full max-w-5xl mt-10 bg-card rounded-lg shadow-xl p-8">
+        <h2 className="text-4xl font-bold text-center mb-10 text-primary">About Me</h2>
+        <div className="text-lg leading-relaxed text-card-foreground space-y-6">
+          <p>
+            {data.about.description}
+          </p>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="w-full max-w-5xl mt-20 py-16 bg-card rounded-lg shadow-xl px-8">
-        <h2 className="text-4xl font-bold text-center mb-10 text-primary">Contact Me</h2>
-        <div className="text-center text-lg text-card-foreground space-y-4">
-          <p>I am always open to new opportunities and collaborations. Feel free to reach out!</p>
-          <p>Email: <a href={`mailto:${data.contact.email}`} className="text-primary hover:underline">{data.contact.email}</a></p>
-          <p>LinkedIn: <a href={data.contact.linkedin} className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">{data.contact.linkedin}</a></p>
-          <p>GitHub: <a href={data.contact.github} className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">{data.contact.github}</a></p>
+      <section id="contact" className="w-full max-w-5xl mt-10 bg-card rounded-lg shadow-xl p-8 mb-20">
+        <h2 className="text-4xl font-bold text-center mb-6 text-primary">Contact Me</h2>
+        <p className="text-center text-lg text-muted-foreground max-w-2xl mx-auto mb-12">
+          I am always open to new opportunities and collaborations. Feel free to reach out through any of the platforms below!
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Email Card */}
+          <a
+            href={`mailto:${data.contact.email}`}
+            className="flex flex-col items-center p-8 bg-background rounded-xl border border-border hover:border-primary hover:shadow-2xl transition-all duration-300 group"
+          >
+            <div className="p-4 bg-primary/10 rounded-full mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+              <FaEnvelope className="w-8 h-8" />
+            </div>
+            <h3 className="text-xl font-bold mb-2">Email</h3>
+            <p className="text-muted-foreground text-center break-all">{data.contact.email}</p>
+          </a>
+
+          {/* LinkedIn Card */}
+          <a
+            href={data.contact.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center p-8 bg-background rounded-xl border border-border hover:border-primary hover:shadow-2xl transition-all duration-300 group"
+          >
+            <div className="p-4 bg-primary/10 rounded-full mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+              <FaLinkedin className="w-8 h-8" />
+            </div>
+            <h3 className="text-xl font-bold mb-2">LinkedIn</h3>
+            <p className="text-muted-foreground text-center">Let&apos;s Connect</p>
+          </a>
+
+          {/* GitHub Card */}
+          <a
+            href={data.contact.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center p-8 bg-background rounded-xl border border-border hover:border-primary hover:shadow-2xl transition-all duration-300 group"
+          >
+            <div className="p-4 bg-primary/10 rounded-full mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+              <FaGithub className="w-8 h-8" />
+            </div>
+            <h3 className="text-xl font-bold mb-2">GitHub</h3>
+            <p className="text-muted-foreground text-center">Check My Code</p>
+          </a>
         </div>
       </section>
     </main>

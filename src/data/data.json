@@ -1,9 +1,9 @@
 {
   "hero": {
     "name": "Le Chi Luan",
-    "title": "Junior Software Engineer",
+    "title": "Software Engineer",
     "bio": "As a dedicated Software Engineer with a strong focus on backend development, I am eager to contribute to your company's success by leveraging my full-stack experience. I have hands-on experience building and optimizing large-scale e-commerce and accounting systems, working with technologies such as Node.js, FastAPI, Python, React, and Elixir. Driven by a passion for continuous learning, I consistently aim to improve system performance, streamline database operations, and deliver scalable solutions. I look forward to applying my problem-solving skills and technical expertise to develop high-quality software that drives meaningful business outcomes.",
-    "profileImage": "https://avatars.githubusercontent.com/u/83630945" 
+    "profileImage": "https://avatars.githubusercontent.com/u/83630945"
   },
   "about": {
     "description": "Hello! I'm Le Chi Luan, a software engineer with a strong foundation in web development. My journey in tech began with a fascination for how digital products come to life, leading me to dive deep into various programming languages and frameworks. Over the years, I've honed my skills in front-end and back-end development, working with technologies like React, Next.js, Node.js, and various databases. I thrive in environments where I can solve complex problems and contribute to impactful projects. When I'm not coding, you can find me exploring new tech trends, contributing to open-source projects, or enjoying outdoor activities. I believe in continuous learning and always strive to improve my craft."
@@ -36,13 +36,13 @@
   "projects": [
     {
       "name": "E-commerce System with Chatbot Integration",
-      "image": "https://placehold.co/500x300/png?text=Project+1",
+      "image": "https://raw.githubusercontent.com/lechiluan/ecommerce/refs/heads/main/static/admin/favicon.ico",
       "description": "Developed an e-commerce system for selling technology devices with chatbot integration and data analysis (Final Year Project). Features include email authentication, product recommendations, export invoice, and chatbots. For owners, it offers product management, data export, sales statistics, and profit forecasting.",
       "link": "https://github.com/lechiluan/ecommerce"
     },
     {
       "name": "Opollo - SaaS E-commerce System",
-      "image": "https://placehold.co/500x300/png?text=Project+2",
+      "image": "https://www.arena-multimedia.vn/wp-content/uploads/2022/07/onpoint.png",
       "description": "Part of OnPoint E-commerce. A SaaS system connecting various third-party e-commerce platforms (Shopee, Tiktok Shop, Lazada, Tiki) into a single system for managing orders, products, channels, inventory, customer service, and purchase orders. Technologies: React, JavaScript, TypeScript, Python, Elixir, PostgreSQL, MongoDB, RabbitMQ, Redis, Elasticsearch, GitHub.",
       "link": "#"
     },
@@ -57,7 +57,11 @@
     {
       "title": "Software Engineer",
       "company": "Yes4All",
-      "duration": "Nov 2024 - Present",
+      "image": "https://media.licdn.com/dms/image/v2/D560BAQEbTiH9Mlv5XQ/company-logo_200_200/company-logo_200_200/0/1727834720056/yes4all_llc_logo?e=2147483647&v=beta&t=5tbzJp_UKxpfEcd34_bwTrB0mvLhfsAfapp08PjYLfU",
+      "startDate": "2024-11",
+      "endDate": null,
+      "employmentType": "Full-time",
+      "location": "Ho Chi Minh City, Vietnam",
       "responsibilities": [
         "Developed and maintained backend systems using Node.js (JavaScript) for SOMS (Sale Order Management System).",
         "Implemented Kafka to communicate with other services in the system.",
@@ -66,9 +70,13 @@
       ]
     },
     {
-      "title": "Backend Developer (Freelance)",
+      "title": "Backend Developer",
       "company": "Finpal",
-      "duration": "Nov 2024 – April 2025",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRNa6VbyL1zXPwVOILqwx4bk4mTEwvU0lxvw&s",
+      "startDate": "2024-11",
+      "endDate": "2025-04",
+      "employmentType": "Freelance",
+      "location": "Remote",
       "responsibilities": [
         "Built a separate service from the current system.",
         "Designed and developed APIs using FastAPI (Python).",
@@ -82,7 +90,11 @@
     {
       "title": "Junior Software Engineer",
       "company": "OnPoint E-commerce",
-      "duration": "Mar 2024 - Sep 2024",
+      "image": "https://media.licdn.com/dms/image/v2/D560BAQGp-UQ_xLBqfw/company-logo_200_200/company-logo_200_200/0/1722052743219?e=2147483647&v=beta&t=KC8PT7nBQL67C48pQ6UOPBbzoWTu3T5SmFLMo8ZxtQs",
+      "startDate": "2024-03",
+      "endDate": "2024-09",
+      "employmentType": "Full-time",
+      "location": "Ho Chi Minh City, Vietnam",
       "responsibilities": [
         "Improved performance, optimized and developed new features for Opollo and Iris projects."
       ]
@@ -90,7 +102,11 @@
     {
       "title": "Fresher Software Engineer",
       "company": "IVS Joint Stock Company",
-      "duration": "Oct 2023 - February 2024",
+      "image": "https://media.licdn.com/dms/image/v2/D560BAQFj-nfijUYIVw/company-logo_200_200/company-logo_200_200/0/1664261477073?e=1770854400&v=beta&t=pH_e7YR54b_jickacOTJ09v3Okc4V00H-lNfUMbCirQ",
+      "startDate": "2023-08",
+      "endDate": "2024-02",
+      "employmentType": "Full-time",
+      "location": "Ho Chi Minh City, Vietnam",
       "responsibilities": [
         "Developed an accounting software project for a large construction corporation in Japan as Full Stack Developer.",
         "Contributed to system development including analyzing requirements, supporting prototypes (use Figma) drawing, writing basic design for the system, and full-stack programming for the project.",
@@ -98,18 +114,13 @@
       ]
     },
     {
-      "title": "Intern Software Engineer",
-      "company": "IVS Joint Stock Company",
-      "duration": "Aug - Sep 2023",
-      "responsibilities": [
-        "Learned about the business processes of warehouse management software and human resource management.",
-        "Gained insights into the Japanese work culture, teamwork skills, and logical thinking."
-      ]
-    },
-    {
-      "title": "Intern Customer Success Engineer (Remote)",
+      "title": "Intern Customer Success Engineer",
       "company": "GCalls company",
-      "duration": "May - Sep 2023",
+      "image": "https://media.licdn.com/dms/image/v2/C560BAQF7eq6712xpSw/company-logo_200_200/company-logo_200_200/0/1646228119876/gcalls_logo?e=2147483647&v=beta&t=FMwlxNvlPkyad4scUFhfKEMFTm8gALenfDEfno1tJDs",
+      "startDate": "2023-05",
+      "endDate": "2023-09",
+      "employmentType": "Internship",
+      "location": "Remote",
       "responsibilities": [
         "Trained in work processes and operations with colleagues and customers.",
         "Received training and practice on becoming a Full Stack Developer with JavaScript libraries such as ReactJS, NodeJS, ExpressJS, and MongoDB, GitLab.",
@@ -119,7 +130,11 @@
     {
       "title": "Intern Python Developer",
       "company": "BIWOCO company",
-      "duration": "April - May 2023",
+      "image": "https://media.licdn.com/dms/image/v2/D560BAQGEMdz3tgfg2g/company-logo_200_200/company-logo_200_200/0/1691236883468/biwoco_logo?e=2147483647&v=beta&t=8yeI-Li90Wi3O9PB1r7jkoVpGTZ7tSS4IFyKEZ5cHK0",
+      "startDate": "2023-04",
+      "endDate": "2023-05",
+      "employmentType": "Internship",
+      "location": "Ho Chi Minh City, Vietnam",
       "responsibilities": [
         "Contributed to an Australian government project using Python libraries such as Natural Language Processing (NLP), Pandas, Justext, and Summy, to scrape data from a website for analysis.",
         "Used scraped data to develop an API for the system using FastAPI."
@@ -130,8 +145,9 @@
     {
       "degree": "Bachelor of Science (BSc Hons) in Computing",
       "institution": "University of Greenwich (UK)",
+      "logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGt65Tb04c61g/company-logo_200_200/B4EZf4szZLGcAI-/0/1752224184383?e=2147483647&v=beta&t=veYaTXQbLh144j4sN9ZqKv75MpXnLDJvwae-yzBdPn8",
       "duration": "July 2019 - October 2023",
-      "notes": "Graduated with First Class Honors – GPA: 76%."
+      "notes": "Graduated with <b>First Class Honors</b>"
     }
   ],
   "contact": {

@@ -266,7 +266,7 @@ export default function Home() {
 
       {/* Blog Section */}
       <section id="blog" className="w-full max-w-5xl mt-10 bg-card rounded-lg shadow-xl p-8 scroll-mt-20">
-        <h2 className="text-4xl font-bold text-center mb-10 text-primary">Recent Posts</h2>
+        <h2 className="text-4xl font-bold text-center mb-10 text-primary">Blog</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {posts.map((post) => (
             <Link key={post.slug} href={`/blog/${post.slug}`} className="bg-background rounded-lg border border-transparent hover:border-primary/50 shadow-md overflow-hidden transform hover:scale-[1.02] transition duration-300">
@@ -285,16 +285,6 @@ export default function Home() {
               </div>
             </Link>
           ))}
-        </div>
-      </section>
-
-      {/* About Me Section */}
-      <section id="about" className="w-full max-w-5xl mt-10 bg-card rounded-lg shadow-xl p-8 scroll-mt-20">
-        <h2 className="text-4xl font-bold text-center mb-10 text-primary">About Me</h2>
-        <div className="text-lg leading-relaxed text-card-foreground space-y-6">
-          <p>
-            {data.about.description}
-          </p>
         </div>
       </section>
 

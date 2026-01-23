@@ -2,11 +2,8 @@
   "hero": {
     "name": "Le Chi Luan",
     "title": "Software Engineer",
-    "bio": "Software Engineer with nearly 3 years of experience designing and operating backend systems for high-volume e-commerce platforms. Proven track record in building scalable, fault-tolerant microservices and distributed workflows using Node.js and Python. Strong expertise in system performance optimization, asynchronous processing, and database efficiency.",
+    "bio": "Software Engineer with nearly 3 years of experience designing and operating backend systems for high-volume e-commerce platforms. Proven track record in building scalable, fault-tolerant microservices and distributed workflows using Node.js and Python. Strong expertise in system performance optimization, asynchronous processing, and database efficiency. Seeking to contribute to a product-driven organization by delivering reliable, scalable backend systems that support long-term business growth and operational excellence.",
     "profileImage": "https://avatars.githubusercontent.com/u/83630945"
-  },
-  "about": {
-    "description": "Hello! I'm Le Chi Luan, a software engineer with a strong foundation in web development. My journey in tech began with a fascination for how digital products come to life, leading me to dive deep into various programming languages and frameworks. Over the years, I've honed my skills in front-end and back-end development, working with technologies like React, Next.js, Node.js, and various databases. I thrive in environments where I can solve complex problems and contribute to impactful projects. When I'm not coding, you can find me exploring new tech trends, contributing to open-source projects, or enjoying outdoor activities. I believe in continuous learning and always strive to improve my craft."
   },
   "skills": [
     {

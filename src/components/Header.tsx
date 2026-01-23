@@ -12,11 +12,6 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link href="/#about" className="hover:text-primary transition duration-300">
-              About
-            </Link>
-          </li>
-          <li>
             <Link href="/#skills" className="hover:text-primary transition duration-300">
               Skills
             </Link>
@@ -28,7 +23,7 @@ const Header = () => {
           </li>
           <li>
             <Link href="/blog" className="hover:text-primary transition duration-300">
-              Post
+              Blog
             </Link>
           </li>
           <li>

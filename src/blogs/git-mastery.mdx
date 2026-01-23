@@ -1,30 +1,41 @@
 ---
-title: 'Làm chủ Git: Những câu lệnh nâng cao bạn cần biết'
-date: '2024-01-20'
-description: >-
-  Khám phá các kỹ thuật Git nâng cao như Rebase, Cherry-pick và cách giải quyết
-  Conflict chuyên nghiệp.
-image: >-
-  https://images.unsplash.com/photo-1556075798-4825dfaaf498?q=80&w=1470&auto=format&fit=crop
+title: "Làm chủ Git: Những câu lệnh nâng cao bạn cần biết"
+author: "Le Chi Luan"
+date: "2024-01-20"
+description: "Khám phá các kỹ thuật Git nâng cao như Rebase, Cherry-pick và cách giải quyết Conflict chuyên nghiệp."
+image: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?q=80&w=1470&auto=format&fit=crop"
 ---
 
-# Làm chủ Git trong Workflow dự án
+<h2>Làm chủ Git trong Workflow dự án</h2>
+<p>
+  Git không chỉ là công cụ để <code>commit</code> và <code>push</code>. Để trở
+  thành một Senior Developer, bạn cần hiểu sâu hơn về các quy trình làm việc.
+</p>
 
-Git không chỉ là công cụ để `commit` và `push`. Để trở thành một Senior Developer, bạn cần hiểu sâu hơn về các quy trình làm việc.
+<h3>1. Git Rebase vs Merge</h3>
+<p>
+  Nhiều người sợ Rebase, nhưng nó là cách tốt nhất để giữ cho lịch sử commit của
+  bạn sạch sẽ.
+</p>
+<pre>
+  <code class="language-bash">git checkout feature-branch git rebase main</code>
+</pre>
 
-## 1. Git Rebase vs Merge
+<h3>2. Cherry-pick</h3>
+<p>
+  Khi bạn chỉ muốn lấy một commit cụ thể từ nhánh khác mà không muốn merge cả
+  nhánh đó.
+</p>
 
-Nhiều người sợ Rebase, nhưng nó là cách tốt nhất để giữ cho lịch sử commit của bạn sạch sẽ.
-
-```bash
-git checkout feature-branch
-git rebase main
-```
-
-## 2. Cherry-pick
-
-Khi bạn chỉ muốn lấy một commit cụ thể từ nhánh khác mà không muốn merge cả nhánh đó.
-
-## 3. Quản lý Conflict
-
-Conflict không đáng sợ, nó là một phần của sự cộng tác. Sử dụng các công cụ như VS Code Merge Editor để xử lý nhanh hơn. Bạn có hiểu không.
+<h3>3. Quản lý Conflict</h3>
+<p>
+  Conflict không đáng sợ, nó là một phần của sự cộng tác. Sử dụng các công cụ
+  như VS Code Merge Editor để xử lý nhanh hơn.
+</p>
+<p>
+  <img
+    src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=1470&auto=format&fit=crop"
+    alt="Coding"
+    style="max-width:100%; height:auto;"
+  />
+</p>

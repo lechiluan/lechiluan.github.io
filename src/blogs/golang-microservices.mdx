@@ -1,23 +1,24 @@
 ---
-title: 'Golang: Lựa chọn tối ưu cho hệ thống lớn'
-date: '2024-01-22'
-description: >-
-  Tại sao các tập đoàn lớn như Google, Netflix, Uber lại chọn Go cho các hệ
-  thống chịu tải cao?
-image: >-
-  https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?q=80&w=1374&auto=format&fit=crop
+title: "Golang: Lựa chọn tối ưu cho Microservices hệ thống lớn"
+author: "Le Chi Luan"
+date: "2024-01-22"
+description: "Tại sao các tập đoàn lớn như Google, Netflix, Uber lại chọn Go cho các hệ thống chịu tải cao?"
+image: "https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?q=80&w=1374&auto=format&fit=crop"
 ---
 
-# Tại sao nên chọn Go (Golang)?
+<h2>Tại sao nên chọn Go (Golang)?</h2>
+<p>
+  Go được thiết kế bởi Google để giải quyết các vấn đề về hiệu suất và sự phức
+  tạp của hệ thống lớn.
+</p>
 
-Go được thiết kế bởi Google để giải quyết các vấn đề về hiệu suất và sự phức tạp của hệ thống lớn.
+<h3>1. Concurrency tuyệt vời</h3>
+<p>
+  Với <code>Goroutines</code>, bạn có thể thực hiện hàng triệu tác vụ đồng thời
+  mà không tốn nhiều tài nguyên như luồng (threads) truyền thống.
+</p>
 
-## 1. Concurrency tuyệt vời
-
-Với `Goroutines`, bạn có thể thực hiện hàng triệu tác vụ đồng thời mà không tốn nhiều tài nguyên như luồng (threads) truyền thống.
-
-```go
-package main
+<pre><code class="language-go">package main
 import "fmt"
 
 func main() {
@@ -25,13 +26,23 @@ func main() {
         fmt.Println("Hello từ Goroutine!")
     }()
     fmt.Scanln()
-}
-```
+}</code></pre>
 
-## 2. Compile nhanh và Static Binary
+<h3>2. Compile nhanh và Static Binary</h3>
+<p>
+  Go biên dịch ra một file nhị phân duy nhất, giúp việc deploy lên Docker hay
+  Kubernetes trở nên đơn giản và nhanh chóng.
+</p>
 
-Go biên dịch ra một file nhị phân duy nhất, giúp việc deploy lên Docker hay Kubernetes trở nên đơn giản và nhanh chóng.
-
-## 3. Tính đơn giản
-
-Triết lý của Go là "Less is More". Ngôn ngữ này không có class, không có kế thừa phức tạp, giúp code dễ đọc và dễ bảo trì hơn.
+<h3>3. Tính đơn giản</h3>
+<p>
+  Triết lý của Go là "Less is More". Ngôn ngữ này không có class, không có kế
+  thừa phức tạp, giúp code dễ đọc và dễ bảo trì hơn.
+</p>
+<p>
+  <img
+    src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1469&auto=format&fit=crop"
+    alt="Go Programming"
+    style="max-width:100%; height:auto;"
+  />
+</p>

@@ -2,9 +2,11 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { MDXRemote } from 'next-mdx-remote/rsc';
+import Link from 'next/link';
 
 export async function generateStaticParams() {
   const blogsDirectory = path.join(process.cwd(), 'src', 'blogs');
+  if (!fs.existsSync(blogsDirectory)) return [];
   const filenames = fs.readdirSync(blogsDirectory);
 
   return filenames.map((filename) => ({
@@ -16,7 +18,6 @@ const PostPage = async ({ params }: { params: { slug: string } }) => {
   const blogsDirectory = path.join(process.cwd(), 'src', 'blogs');
   let fullPath = path.join(blogsDirectory, `${params.slug}.mdx`);
 
-  // Fallback to .md if .mdx doesn't exist
   if (!fs.existsSync(fullPath)) {
     fullPath = path.join(blogsDirectory, `${params.slug}.md`);
   }
@@ -32,22 +33,33 @@ const PostPage = async ({ params }: { params: { slug: string } }) => {
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
 
+  // Check if content looks like HTML
+  const isHtml = content.trim().startsWith('<') && content.trim().includes('>');
+
   return (
     <main className="min-h-screen bg-background text-foreground">
       <div className="container mx-auto px-4 py-20 max-w-4xl">
         <article className="prose prose-slate dark:prose-invert max-w-none">
-          <header className="mb-8 not-prose">
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-primary">
+          <header className="mb-12 not-prose">
+            <Link href="/blog" className="text-primary hover:underline mb-8 inline-block font-medium">
+              ← Back to Blog
+            </Link>
+            <h1 className="text-4xl md:text-6xl font-black mb-6 text-primary tracking-tight">
               {data.title}
             </h1>
-            <p className="text-muted-foreground text-lg">
-              {data.date}
-            </p>
-            <hr className="mt-8 border-border" />
+            <div className="flex items-center gap-4 text-muted-foreground text-sm md:text-base border-y border-border py-4">
+              <span className="font-bold text-foreground">By {data.author || 'Le Chi Luan'}</span>
+              <span>•</span>
+              <time>{data.date}</time>
+            </div>
           </header>
 
           <div className="mt-8">
-            <MDXRemote source={content} />
+            {isHtml ? (
+              <div dangerouslySetInnerHTML={{ __html: content }} />
+            ) : (
+              <MDXRemote source={content} />
+            )}
           </div>
         </article>
       </div>

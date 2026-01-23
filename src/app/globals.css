@@ -38,28 +38,28 @@
   .dark {
     --background: 224 71% 4%;
     --foreground: 210 20% 90%;
- 
+
     --card: 224 71% 4%;
     --card-foreground: 210 20% 90%;
- 
+
     --popover: 224 71% 4%;
     --popover-foreground: 210 20% 90%;
- 
+
     --primary: 210 80% 60%;
     --primary-foreground: 0 0% 100%;
- 
+
     --secondary: 215 28% 17%;
     --secondary-foreground: 210 20% 90%;
- 
+
     --muted: 215 28% 17%;
     --muted-foreground: 215 20.2% 65.1%;
- 
+
     --accent: 215 28% 17%;
     --accent-foreground: 210 20% 90%;
- 
+
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 20% 90%;
- 
+
     --border: 215 28% 17%;
     --input: 215 28% 17%;
     --ring: 216 34% 80%;
@@ -69,6 +69,9 @@
 @layer base {
   * {
     @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
   }
   body {
     @apply bg-background text-foreground;

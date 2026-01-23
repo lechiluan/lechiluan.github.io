@@ -1,15 +1,11 @@
-// Utility function to calculate duration between two dates in LinkedIn format
 export function calculateDuration(startDate: string, endDate: string | null): string {
   const start = new Date(startDate);
   const end = endDate ? new Date(endDate) : new Date();
   
-  let years = end.getFullYear() - start.getFullYear();
-  let months = end.getMonth() - start.getMonth();
-  
-  if (months < 0) {
-    years--;
-    months += 12;
-  }
+  // LinkedIn adds 1 month because it's inclusive (e.g., Jan to Jan is 1 month)
+  const totalMonths = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth()) + 1;
+  const years = Math.floor(totalMonths / 12);
+  const months = totalMonths % 12;
   
   const parts: string[] = [];
   

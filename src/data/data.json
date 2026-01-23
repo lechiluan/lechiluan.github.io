@@ -2,55 +2,122 @@
   "hero": {
     "name": "Le Chi Luan",
     "title": "Software Engineer",
-    "bio": "As a dedicated Software Engineer with a strong focus on backend development, I am eager to contribute to your company's success by leveraging my full-stack experience. I have hands-on experience building and optimizing large-scale e-commerce and accounting systems, working with technologies such as Node.js, FastAPI, Python, React, and Elixir. Driven by a passion for continuous learning, I consistently aim to improve system performance, streamline database operations, and deliver scalable solutions. I look forward to applying my problem-solving skills and technical expertise to develop high-quality software that drives meaningful business outcomes.",
+    "bio": "Software Engineer with nearly 3 years of experience designing and operating backend systems for high-volume e-commerce platforms. Proven track record in building scalable, fault-tolerant microservices and distributed workflows using Node.js and Python. Strong expertise in system performance optimization, asynchronous processing, and database efficiency.",
     "profileImage": "https://avatars.githubusercontent.com/u/83630945"
   },
   "about": {
     "description": "Hello! I'm Le Chi Luan, a software engineer with a strong foundation in web development. My journey in tech began with a fascination for how digital products come to life, leading me to dive deep into various programming languages and frameworks. Over the years, I've honed my skills in front-end and back-end development, working with technologies like React, Next.js, Node.js, and various databases. I thrive in environments where I can solve complex problems and contribute to impactful projects. When I'm not coding, you can find me exploring new tech trends, contributing to open-source projects, or enjoying outdoor activities. I believe in continuous learning and always strive to improve my craft."
   },
   "skills": [
-    "Python",
-    "JavaScript",
-    "Elixir",
-    "PHP",
-    "TypeScript",
-    "Django",
-    "React",
-    "Bootstrap",
-    "Phoenix",
-    "Pandas",
-    "FastAPI",
-    "PostgreSQL",
-    "MySQL",
-    "MongoDB",
-    "Redis",
-    "RabbitMQ",
-    "Elasticsearch",
-    "GitHub",
-    "Ubuntu",
-    "RESTful",
-    "Node.js",
-    "Heroku",
-    "Railway"
+    {
+      "name": "Python",
+      "icon": "https://skillicons.dev/icons?i=py"
+    },
+    {
+      "name": "JavaScript",
+      "icon": "https://skillicons.dev/icons?i=js"
+    },
+    {
+      "name": "TypeScript",
+      "icon": "https://skillicons.dev/icons?i=ts"
+    },
+    {
+      "name": "Node.js",
+      "icon": "https://skillicons.dev/icons?i=nodejs"
+    },
+    {
+      "name": "Express",
+      "icon": "https://skillicons.dev/icons?i=express"
+    },
+    {
+      "name": "FastAPI",
+      "icon": "https://skillicons.dev/icons?i=fastapi"
+    },
+    {
+      "name": "Django",
+      "icon": "https://skillicons.dev/icons?i=django"
+    },
+    {
+      "name": "React",
+      "icon": "https://skillicons.dev/icons?i=react"
+    },
+    {
+      "name": "PostgreSQL",
+      "icon": "https://skillicons.dev/icons?i=postgres"
+    },
+    {
+      "name": "MySQL",
+      "icon": "https://skillicons.dev/icons?i=mysql"
+    },
+    {
+      "name": "MongoDB",
+      "icon": "https://skillicons.dev/icons?i=mongodb"
+    },
+    {
+      "name": "Redis",
+      "icon": "https://skillicons.dev/icons?i=redis"
+    },
+    {
+      "name": "Elasticsearch",
+      "icon": "https://skillicons.dev/icons?i=elasticsearch"
+    },
+    {
+      "name": "Kafka",
+      "icon": "https://skillicons.dev/icons?i=kafka"
+    },
+    {
+      "name": "Conductor",
+      "icon": "https://avatars.githubusercontent.com/u/153258413?s=200&v=4"
+    },
+    {
+      "name": "Nginx",
+      "icon": "https://skillicons.dev/icons?i=nginx"
+    },
+    {
+      "name": "Git",
+      "icon": "https://skillicons.dev/icons?i=git"
+    },
+    {
+      "name": "GitHub",
+      "icon": "https://skillicons.dev/icons?i=github"
+    },
+    {
+      "name": "Ubuntu",
+      "icon": "https://skillicons.dev/icons?i=ubuntu"
+    },
+    {
+      "name": "Jest",
+      "icon": "https://skillicons.dev/icons?i=jest"
+    },
+    {
+      "name": "Mocha",
+      "icon": "https://cdn.worldvectorlogo.com/logos/mocha-1.svg"
+    },
+    {
+      "name": "Pandas",
+      "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCpCB6Du8H6Lrm5WIbDcdW59uqoSiL-eeTlw&s"
+    },
+    {
+      "name": "OpenAI",
+      "icon": "https://avatars.githubusercontent.com/u/14957082?s=200&v=4"
+    },
+    {
+      "name": "Elixir",
+      "icon": "https://skillicons.dev/icons?i=elixir"
+    }
   ],
   "projects": [
     {
+      "name": "VisAI - AI Claims Agent (Yes4All Hackathon)",
+      "image": "https://placehold.co/500x300/png?text=VisAI",
+      "description": "Developed an AI agent to assess delivery package damage and identify carrier vs. vendor responsibility, enabling claim verification for returned goods. Uses Computer Vision and OpenAI Vision.",
+      "link": "https://github.com/lechiluan/VisAI"
+    },
+    {
       "name": "E-commerce System with Chatbot Integration",
       "image": "https://raw.githubusercontent.com/lechiluan/ecommerce/refs/heads/main/static/admin/favicon.ico",
-      "description": "Developed an e-commerce system for selling technology devices with chatbot integration and data analysis (Final Year Project). Features include email authentication, product recommendations, export invoice, and chatbots. For owners, it offers product management, data export, sales statistics, and profit forecasting.",
+      "description": "Developed an e-commerce system for selling technology devices with chatbot integration and data analysis (Final Year Project). Features include product recommendations, export invoice, and chatbots using Django and Dialogflow.",
       "link": "https://github.com/lechiluan/ecommerce"
-    },
-    {
-      "name": "Opollo - SaaS E-commerce System",
-      "image": "https://www.arena-multimedia.vn/wp-content/uploads/2022/07/onpoint.png",
-      "description": "Part of OnPoint E-commerce. A SaaS system connecting various third-party e-commerce platforms (Shopee, Tiktok Shop, Lazada, Tiki) into a single system for managing orders, products, channels, inventory, customer service, and purchase orders. Technologies: React, JavaScript, TypeScript, Python, Elixir, PostgreSQL, MongoDB, RabbitMQ, Redis, Elasticsearch, GitHub.",
-      "link": "#"
-    },
-    {
-      "name": "Iris - Chat Service Microservice",
-      "image": "https://placehold.co/500x300/png?text=Project+3",
-      "description": "Part of OnPoint E-commerce. A chat service system separated from Opollo into a microservice to connect customer services between e-commerce platforms and the Opollo system. Technologies: Elixir, PostgreSQL.",
-      "link": "#"
     }
   ],
   "experience": [
@@ -63,10 +130,25 @@
       "employmentType": "Full-time",
       "location": "Ho Chi Minh City, Vietnam",
       "responsibilities": [
-        "Developed and maintained backend systems using Node.js (JavaScript) for SOMS (Sale Order Management System).",
-        "Implemented Kafka to communicate with other services in the system.",
-        "Integrated and interacted with Amazon Vendor Central API.",
-        "Collaborated with frontend developers, testers, and other backend engineers to ensure seamless integration of features."
+        {
+          "title": "Project SOMS (Sales Order Management System)",
+          "description": "A backend system for automating order management, shipping carriers, invoicing, and transaction flows across multi-channel e-commerce platforms.",
+          "details": [
+            "Integrated multiple global e-commerce platforms (Amazon Vendor, Amazon Seller, Walmart, Wayfair) and international logistics providers (USPS, UPS, FedEx) into a centralized order management system.",
+            "Wrote unit and integration tests using Jest and Mocha to ensure system reliability.",
+            "Implemented Apache Kafka to enable asynchronous, scalable communication between microservices.",
+            "Integrated Conductor to manage job execution and distributed workflows in microservices architecture."
+          ],
+          "techStack": [
+            "Node.js",
+            "PostgreSQL",
+            "Conductor",
+            "Kafka",
+            "Jest",
+            "Mocha",
+            "AWS S3."
+          ]
+        }
       ]
     },
     {
@@ -74,17 +156,28 @@
       "company": "Finpal",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRNa6VbyL1zXPwVOILqwx4bk4mTEwvU0lxvw&s",
       "startDate": "2024-11",
-      "endDate": "2025-04",
+      "endDate": "2025-10",
       "employmentType": "Freelance",
       "location": "Remote",
       "responsibilities": [
-        "Built a separate service from the current system.",
-        "Designed and developed APIs using FastAPI (Python).",
-        "Connected and integrated AI models into the backend system.",
-        "Optimized database queries to improve performance.",
-        "Deployed servers on AWS EC2 with Ubuntu.",
-        "Managed and configured Nginx servers.",
-        "Automated CI/CD processes using GitHub Actions."
+        {
+          "title": "Project Finpal",
+          "description": "A driven financial analytics platform that transforms complex market and company data into clear insights for smarter investment decisions.",
+          "details": [
+            "Designed and developed a microservice backend service using FastAPI.",
+            "Integrated OpenAI (function calling) into backend workflows to support financial analysis and automation. Optimized database queries to improve performance.",
+            "Deployed services on AWS EC2 (Ubuntu) with Nginx and automated CI/CD using GitHub Actions."
+          ],
+          "techStack": [
+            "Python",
+            "FastAPI",
+            "MySQL",
+            "OpenAI",
+            "EC2",
+            "Nginx",
+            "GitHub Actions."
+          ]
+        }
       ]
     },
     {
@@ -92,11 +185,41 @@
       "company": "OnPoint E-commerce",
       "image": "https://media.licdn.com/dms/image/v2/D560BAQGp-UQ_xLBqfw/company-logo_200_200/company-logo_200_200/0/1722052743219?e=2147483647&v=beta&t=KC8PT7nBQL67C48pQ6UOPBbzoWTu3T5SmFLMo8ZxtQs",
       "startDate": "2024-03",
-      "endDate": "2024-09",
+      "endDate": "2024-10",
       "employmentType": "Full-time",
       "location": "Ho Chi Minh City, Vietnam",
       "responsibilities": [
-        "Improved performance, optimized and developed new features for Opollo and Iris projects."
+        {
+          "title": "Project Opollo",
+          "description": "A SaaS platform aggregating multiple third-party e-commerce platforms into a unified system for enterprise operations.",
+          "details": [
+            "Developed and optimized features for order management, product, inventory, customer service, and purchase orders.",
+            "Integrated multiple e-commerce platforms (Shopee, TikTok Shop, Lazada) and local logistics providers (GHN, GHTK) into a centralized order management system.",
+            "Improved system performance and scalability across high-volume workloads."
+          ],
+          "techStack": [
+            "React",
+            "Node.js",
+            "Elixir",
+            "PostgreSQL",
+            "Redis",
+            "Elasticsearch",
+            "GitHub."
+          ]
+        },
+        {
+          "title": "Project Iris",
+          "description": "Developed a dedicated live chat microservice extracted from the core Opollo system to handle message ingestion, storage, and delivery across multiple e-commerce platforms.",
+          "details": [
+            "Implemented backend logic to receive, persist, and route customer messages from external marketplaces to the Opollo system in near real-time."
+          ],
+          "techStack": [
+            "Elixir",
+            "PostgreSQL",
+            "Webhook",
+            "Microservices."
+          ]
+        }
       ]
     },
     {
@@ -108,9 +231,19 @@
       "employmentType": "Full-time",
       "location": "Ho Chi Minh City, Vietnam",
       "responsibilities": [
-        "Developed an accounting software project for a large construction corporation in Japan as Full Stack Developer.",
-        "Contributed to system development including analyzing requirements, supporting prototypes (use Figma) drawing, writing basic design for the system, and full-stack programming for the project.",
-        "Technology used: RESTful API, .NET, JavaScript, GitLab."
+        {
+          "title": "Project Aizen",
+          "description": "Contributed to the development of an enterprise SaaS accounting system for a large construction corporation in Japan.",
+          "details": [
+            "Designed and implemented backend APIs and corresponding user interfaces for core accounting workflows, collaborating with cross-functional offshore teams."
+          ],
+          "techStack": [
+            "JavaScript",
+            ".NET",
+            "SQL Server",
+            "GitLab."
+          ]
+        }
       ]
     },
     {
@@ -118,17 +251,31 @@
       "company": "GCalls company",
       "image": "https://media.licdn.com/dms/image/v2/C560BAQF7eq6712xpSw/company-logo_200_200/company-logo_200_200/0/1646228119876/gcalls_logo?e=2147483647&v=beta&t=FMwlxNvlPkyad4scUFhfKEMFTm8gALenfDEfno1tJDs",
       "startDate": "2023-05",
-      "endDate": "2023-09",
+      "endDate": "2023-07",
       "employmentType": "Internship",
       "location": "Remote",
       "responsibilities": [
-        "Trained in work processes and operations with colleagues and customers.",
-        "Received training and practice on becoming a Full Stack Developer with JavaScript libraries such as ReactJS, NodeJS, ExpressJS, and MongoDB, GitLab.",
-        "Deployed a project on Ubuntu Server and Cloudflare."
+        {
+          "title": "Training and Development",
+          "details": [
+            "Developed full-stack web applications using MERN Stack.",
+            "Deployed applications on AWS EC2 (Ubuntu) and Cloudflare.",
+            "Implemented automation testing for several modules of the GCalls."
+          ],
+          "techStack": [
+            "Node.js",
+            "Express.js",
+            "React.js",
+            "MongoDB",
+            "Mocha",
+            "EC2",
+            "Cloudflare."
+          ]
+        }
       ]
     },
     {
-      "title": "Intern Python Developer",
+      "title": "Intern Backend Developer",
       "company": "BIWOCO company",
       "image": "https://media.licdn.com/dms/image/v2/D560BAQGEMdz3tgfg2g/company-logo_200_200/company-logo_200_200/0/1691236883468/biwoco_logo?e=2147483647&v=beta&t=8yeI-Li90Wi3O9PB1r7jkoVpGTZ7tSS4IFyKEZ5cHK0",
       "startDate": "2023-04",
@@ -136,8 +283,18 @@
       "employmentType": "Internship",
       "location": "Ho Chi Minh City, Vietnam",
       "responsibilities": [
-        "Contributed to an Australian government project using Python libraries such as Natural Language Processing (NLP), Pandas, Justext, and Summy, to scrape data from a website for analysis.",
-        "Used scraped data to develop an API for the system using FastAPI."
+        {
+          "title": "Project VoltaRocks",
+          "description": "Designed a FastAPI backend to ingest, process, and serve government energy data collected through scraping and NLP pipelines.",
+          "details": [],
+          "techStack": [
+            "Python",
+            "Pandas",
+            "JusText",
+            "Sumy",
+            "FastAPI"
+          ]
+        }
       ]
     }
   ],
@@ -146,8 +303,13 @@
       "degree": "Bachelor of Science (BSc Hons) in Computing",
       "institution": "University of Greenwich (UK)",
       "logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGt65Tb04c61g/company-logo_200_200/B4EZf4szZLGcAI-/0/1752224184383?e=2147483647&v=beta&t=veYaTXQbLh144j4sN9ZqKv75MpXnLDJvwae-yzBdPn8",
-      "duration": "July 2019 - October 2023",
-      "notes": "Graduated with <b>First Class Honors</b>"
+      "duration": "2019 - 2023",
+      "notes": [
+        "Graduated with First Class Honors",
+        "Top 3 Student - Computing Program From 2020-2023 (Consecutive Multiple Semesters)",
+        "Core team member of Google Student Developer Clubs (2022-2023)",
+        "Third Prize Greenwich Coding Challenge V3.1 (2022)"
+      ]
     }
   ],
   "contact": {

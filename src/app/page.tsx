@@ -47,7 +47,7 @@ export default function Home() {
           </p>
           <div className="mt-10 flex space-x-6">
             <a
-              href="#projects"
+              href="#experience"
               className="px-8 py-3 bg-primary text-primary-foreground rounded-full text-lg font-semibold hover:bg-primary/90 transition duration-300 transform hover:scale-105 shadow-lg"
             >
               View My Work
@@ -63,7 +63,7 @@ export default function Home() {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="w-full max-w-5xl mt-10 p-8 bg-card rounded-lg shadow-xl">
+      <section id="education" className="w-full max-w-5xl mt-10 p-8 bg-card rounded-lg shadow-xl scroll-mt-20">
         <h2 className="text-4xl font-bold text-center mb-10 text-primary">Education</h2>
         <div className="space-y-6">
           {data.education.map((edu, index) => (
@@ -97,9 +97,21 @@ export default function Home() {
                 </div>
 
                 {/* Notes/Honors */}
-                <p className="text-base text-card-foreground">
-                  {edu.notes}
-                </p>
+                <ul className="space-y-1 text-base text-card-foreground mt-2">
+                  {Array.isArray(edu.notes) ? (
+                    edu.notes.map((note, i) => (
+                      <li key={i} className="flex gap-2">
+                        <span className="text-muted-foreground mt-1 text-xs">●</span>
+                        <span>{note}</span>
+                      </li>
+                    ))
+                  ) : (
+                    <li className="flex gap-2">
+                      <span className="text-muted-foreground mt-1 text-xs">●</span>
+                      <span>{edu.notes}</span>
+                    </li>
+                  )}
+                </ul>
               </div>
             </div>
           ))}
@@ -107,7 +119,7 @@ export default function Home() {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="w-full max-w-5xl mt-10 bg-card rounded-lg shadow-xl p-8">
+      <section id="experience" className="w-full max-w-5xl mt-10 bg-card rounded-lg shadow-xl p-8 scroll-mt-20">
         <h2 className="text-4xl font-bold text-center mb-10 text-primary">Experience</h2>
         <div className="space-y-6">
           {data.experience.map((exp, index) => (
@@ -145,15 +157,51 @@ export default function Home() {
                   {exp.location} · {exp.employmentType}
                 </div>
 
-                {/* Responsibilities */}
-                <ul className="space-y-2 text-base text-card-foreground">
-                  {exp.responsibilities.map((responsibility, i) => (
-                    <li key={i} className="flex gap-2">
-                      <span className="text-muted-foreground mt-0.5">•</span>
-                      <span>{responsibility}</span>
-                    </li>
+                {/* Responsibilities & Projects */}
+                <div className="space-y-8">
+                  {exp.responsibilities.map((project: any, i: number) => (
+                    <div key={i} className="space-y-3">
+                      {/* Project Headline (Title + Description) */}
+                      <div className="flex items-start gap-3">
+                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
+                        <div className="text-base leading-relaxed">
+                          <span className="font-bold text-foreground mr-2">
+                            {project.title}
+                          </span>
+                          {project.description && (
+                            <span className="text-foreground/90">
+                              — {project.description}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Project Details */}
+                      {project.details && project.details.length > 0 && (
+                        <ul className="space-y-2 ml-4">
+                          {project.details.map((detail: string, j: number) => (
+                            <li key={j} className="flex gap-3">
+                              <span className="w-1.5 h-1.5 border border-primary/50 rotate-45 mt-2.5 flex-shrink-0" />
+                              <span className="text-base text-foreground/90 leading-relaxed">
+                                {detail}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+
+                      {/* Tech Stack */}
+                      {project.techStack && project.techStack.length > 0 && (
+                        <div className="flex flex-wrap gap-2 pt-1">
+                          <span className="text-sm font-semibold text-primary/80">Tech Stack:</span>
+                          <p className="text-sm italic text-foreground/90">
+                            {project.techStack.join(", ")}
+                          </p>
+                        </div>
+                      )}
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
             </div>
           ))}
@@ -161,19 +209,30 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="w-full max-w-5xl mt-10 bg-card rounded-lg shadow-xl p-8">
+      <section id="skills" className="w-full max-w-5xl mt-10 bg-card rounded-lg shadow-xl p-8 scroll-mt-20">
         <h2 className="text-4xl font-bold text-center mb-10 text-primary">Skills</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 text-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {data.skills.map((skill, index) => (
-            <div key={index} className="p-4 bg-secondary rounded-lg border border-transparent hover:border-primary/50 hover:bg-accent/10 shadow-md transition duration-300">
-              <h3 className="text-xl font-semibold text-secondary-foreground">{skill}</h3>
+            <div key={index} className="flex items-center gap-4 p-4 bg-background rounded-xl border border-border/50 hover:border-primary/50 hover:bg-accent/5 hover:shadow-md transition-all duration-300 group">
+              <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-secondary/30 rounded-lg p-1.5 group-hover:scale-110 group-hover:bg-primary/10 transition-all duration-300">
+                <Image
+                  src={skill.icon}
+                  alt={skill.name}
+                  width={32}
+                  height={32}
+                  className="object-contain"
+                />
+              </div>
+              <h3 className="text-base font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
+                {skill.name}
+              </h3>
             </div>
           ))}
         </div>
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="w-full max-w-5xl mt-10 bg-card rounded-lg shadow-xl p-8">
+      <section id="projects" className="w-full max-w-5xl mt-10 bg-card rounded-lg shadow-xl p-8 scroll-mt-20">
         <h2 className="text-4xl font-bold text-center mb-10 text-primary">Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {data.projects.map((project, index) => (
@@ -206,7 +265,7 @@ export default function Home() {
       </section>
 
       {/* Blog Section */}
-      <section id="blog" className="w-full max-w-5xl mt-10 bg-card rounded-lg shadow-xl p-8">
+      <section id="blog" className="w-full max-w-5xl mt-10 bg-card rounded-lg shadow-xl p-8 scroll-mt-20">
         <h2 className="text-4xl font-bold text-center mb-10 text-primary">Recent Posts</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {posts.map((post) => (
@@ -230,7 +289,7 @@ export default function Home() {
       </section>
 
       {/* About Me Section */}
-      <section id="about" className="w-full max-w-5xl mt-10 bg-card rounded-lg shadow-xl p-8">
+      <section id="about" className="w-full max-w-5xl mt-10 bg-card rounded-lg shadow-xl p-8 scroll-mt-20">
         <h2 className="text-4xl font-bold text-center mb-10 text-primary">About Me</h2>
         <div className="text-lg leading-relaxed text-card-foreground space-y-6">
           <p>
@@ -240,7 +299,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="w-full max-w-5xl mt-10 bg-card rounded-lg shadow-xl p-8 mb-20">
+      <section id="contact" className="w-full max-w-5xl mt-10 bg-card rounded-lg shadow-xl p-8 mb-20 scroll-mt-20">
         <h2 className="text-4xl font-bold text-center mb-6 text-primary">Contact Me</h2>
         <p className="text-center text-lg text-muted-foreground max-w-2xl mx-auto mb-12">
           I am always open to new opportunities and collaborations. Feel free to reach out through any of the platforms below!

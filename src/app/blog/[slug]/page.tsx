@@ -1,36 +1,57 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { remark } from 'remark';
-import html from 'remark-html';
+import { MDXRemote } from 'next-mdx-remote/rsc';
 
 export async function generateStaticParams() {
   const postsDirectory = path.join(process.cwd(), 'src', 'posts');
   const filenames = fs.readdirSync(postsDirectory);
 
   return filenames.map((filename) => ({
-    slug: filename.replace(/\.md$/, ''),
+    slug: filename.replace(/\.(md|mdx)$/, ''),
   }));
 }
 
 const PostPage = async ({ params }: { params: { slug: string } }) => {
   const postsDirectory = path.join(process.cwd(), 'src', 'posts');
-  const fullPath = path.join(postsDirectory, `${params.slug}.md`);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
+  let fullPath = path.join(postsDirectory, `${params.slug}.mdx`);
 
+  // Fallback to .md if .mdx doesn't exist
+  if (!fs.existsSync(fullPath)) {
+    fullPath = path.join(postsDirectory, `${params.slug}.md`);
+  }
+
+  if (!fs.existsSync(fullPath)) {
+    return (
+      <div className="container mx-auto px-4 py-20 text-center">
+        <h1 className="text-2xl font-bold">Post not found</h1>
+      </div>
+    );
+  }
+
+  const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
 
-  const processedContent = await remark().use(html).process(content);
-  const contentHtml = processedContent.toString();
-
   return (
-    <div className="container mx-auto px-4 py-8">
-      <article className="prose lg:prose-xl">
-        <h1>{data.title}</h1>
-        <p className="text-gray-600">{data.date}</p>
-        <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
-      </article>
-    </div>
+    <main className="min-h-screen bg-background text-foreground">
+      <div className="container mx-auto px-4 py-20 max-w-4xl">
+        <article className="prose prose-slate dark:prose-invert max-w-none">
+          <header className="mb-8 not-prose">
+            <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-primary">
+              {data.title}
+            </h1>
+            <p className="text-muted-foreground text-lg">
+              {data.date}
+            </p>
+            <hr className="mt-8 border-border" />
+          </header>
+
+          <div className="mt-8">
+            <MDXRemote source={content} />
+          </div>
+        </article>
+      </div>
+    </main>
   );
 };
 

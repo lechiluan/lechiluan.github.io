@@ -106,7 +106,7 @@
   "projects": [
     {
       "name": "VisAI - AI Claims Agent (Yes4All Hackathon)",
-      "image": "https://placehold.co/500x300/png?text=VisAI",
+      "image": "/images/projects/visai_logo.png",
       "description": "Developed an AI agent to assess delivery package damage and identify carrier vs. vendor responsibility, enabling claim verification for returned goods. Uses Computer Vision and OpenAI Vision.",
       "link": "https://github.com/lechiluan/VisAI"
     },

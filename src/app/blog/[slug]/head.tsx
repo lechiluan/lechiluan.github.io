@@ -4,8 +4,8 @@ import path from 'path';
 import matter from 'gray-matter';
 
 const PostHead = async ({ params }: { params: { slug: string } }) => {
-  const postsDirectory = path.join(process.cwd(), 'src', 'posts');
-  const fullPath = path.join(postsDirectory, `${params.slug}.md`);
+  const blogsDirectory = path.join(process.cwd(), 'src', 'blogs');
+  const fullPath = path.join(blogsDirectory, `${params.slug}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
   const { data } = matter(fileContents);

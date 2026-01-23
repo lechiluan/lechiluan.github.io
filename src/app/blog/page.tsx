@@ -5,12 +5,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const Blog = () => {
-  const postsDirectory = path.join(process.cwd(), 'src', 'posts');
-  const fileNames = fs.readdirSync(postsDirectory);
+  const blogsDirectory = path.join(process.cwd(), 'src', 'blogs');
+  const fileNames = fs.readdirSync(blogsDirectory);
 
-  const posts = fileNames.map((fileName) => {
+  const blogs = fileNames.map((fileName) => {
     const slug = fileName.replace(/\.(md|mdx)$/, '');
-    const fullPath = path.join(postsDirectory, fileName);
+    const fullPath = path.join(blogsDirectory, fileName);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data } = matter(fileContents);
 
@@ -36,7 +36,7 @@ const Blog = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {posts.map((post) => (
+          {blogs.map((post) => (
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}

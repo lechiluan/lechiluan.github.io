@@ -8,12 +8,12 @@ import { calculateDuration, formatDateRange } from '../utils/dateUtils';
 import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 
 export default function Home() {
-  const postsDirectory = path.join(process.cwd(), 'src', 'posts');
-  const fileNames = fs.readdirSync(postsDirectory);
+  const blogsDirectory = path.join(process.cwd(), 'src', 'blogs');
+  const fileNames = fs.readdirSync(blogsDirectory);
 
-  const posts = fileNames.map((fileName) => {
+  const blogs = fileNames.map((fileName) => {
     const slug = fileName.replace(/\.(md|mdx)$/, '');
-    const fullPath = path.join(postsDirectory, fileName);
+    const fullPath = path.join(blogsDirectory, fileName);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data } = matter(fileContents);
 
@@ -268,7 +268,7 @@ export default function Home() {
       <section id="blog" className="w-full max-w-5xl mt-10 bg-card rounded-lg shadow-xl p-8 scroll-mt-20">
         <h2 className="text-4xl font-bold text-center mb-10 text-primary">Blog</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {posts.map((post) => (
+          {blogs.map((post) => (
             <Link key={post.slug} href={`/blog/${post.slug}`} className="bg-background rounded-lg border border-transparent hover:border-primary/50 shadow-md overflow-hidden transform hover:scale-[1.02] transition duration-300">
               <Image
                 src={`https://picsum.photos/seed/${post.slug}/500/300`}

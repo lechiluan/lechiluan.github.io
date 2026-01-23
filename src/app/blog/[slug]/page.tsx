@@ -4,8 +4,8 @@ import matter from 'gray-matter';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 
 export async function generateStaticParams() {
-  const postsDirectory = path.join(process.cwd(), 'src', 'posts');
-  const filenames = fs.readdirSync(postsDirectory);
+  const blogsDirectory = path.join(process.cwd(), 'src', 'blogs');
+  const filenames = fs.readdirSync(blogsDirectory);
 
   return filenames.map((filename) => ({
     slug: filename.replace(/\.(md|mdx)$/, ''),
@@ -13,12 +13,12 @@ export async function generateStaticParams() {
 }
 
 const PostPage = async ({ params }: { params: { slug: string } }) => {
-  const postsDirectory = path.join(process.cwd(), 'src', 'posts');
-  let fullPath = path.join(postsDirectory, `${params.slug}.mdx`);
+  const blogsDirectory = path.join(process.cwd(), 'src', 'blogs');
+  let fullPath = path.join(blogsDirectory, `${params.slug}.mdx`);
 
   // Fallback to .md if .mdx doesn't exist
   if (!fs.existsSync(fullPath)) {
-    fullPath = path.join(postsDirectory, `${params.slug}.md`);
+    fullPath = path.join(blogsDirectory, `${params.slug}.md`);
   }
 
   if (!fs.existsSync(fullPath)) {

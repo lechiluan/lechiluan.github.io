@@ -7,6 +7,16 @@ const Header = () => {
       <nav className="container mx-auto flex justify-center items-center relative">
         <ul className="flex space-x-8 text-lg font-medium">
           <li>
+            <Link href="/" className="hover:text-primary transition duration-300">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link href="/#education" className="hover:text-primary transition duration-300">
+              Education
+            </Link>
+          </li>
+          <li>
             <Link href="/#experience" className="hover:text-primary transition duration-300">
               Experience
             </Link>
@@ -24,11 +34,6 @@ const Header = () => {
           <li>
             <Link href="/blog" className="hover:text-primary transition duration-300">
               Blog
-            </Link>
-          </li>
-          <li>
-            <Link href="/#education" className="hover:text-primary transition duration-300">
-              Education
             </Link>
           </li>
           <li>

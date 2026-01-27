@@ -29,6 +29,10 @@ const BlogEditor = dynamic(() => import('@/components/BlogEditor'), {
     )
 });
 
+const BlogRenderer = dynamic(() => import('@/components/BlogRenderer'), {
+    ssr: false,
+});
+
 export default function BlogAdmin() {
     const [isEditing, setIsEditing] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -39,9 +43,10 @@ export default function BlogAdmin() {
         date: new Date().toISOString().split('T')[0],
         description: '',
         image: '',
-        content: '',
+        content: {} as any,
         slug: ''
     });
+    const [editorKey, setEditorKey] = useState(Date.now());
 
     const [availableSlugs, setAvailableSlugs] = useState<string[]>([]);
     const [searchSlug, setSearchSlug] = useState('');
@@ -74,6 +79,7 @@ export default function BlogAdmin() {
                     author: data.author || 'Le Chi Luan'
                 });
                 setIsEditing(true);
+                setEditorKey(Date.now());
             } else {
                 alert('Post not found');
             }
@@ -119,9 +125,10 @@ export default function BlogAdmin() {
                         date: new Date().toISOString().split('T')[0],
                         description: '',
                         image: '',
-                        content: '',
+                        content: {},
                         slug: ''
                     });
+                    setEditorKey(Date.now());
                 }
             } else {
                 alert(`Error: ${result.error}`);
@@ -173,39 +180,42 @@ export default function BlogAdmin() {
                 {showPreview ? (
                     /* High Fidelity Preview */
                     <div className="animate-in fade-in slide-in-from-bottom-8 duration-700">
-                        <div className="bg-card border border-border rounded-3xl overflow-hidden shadow-2xl">
-                            {formData.image && (
-                                <div className="h-[40vh] w-full overflow-hidden">
-                                    <img src={formData.image} alt="Hero" className="w-full h-full object-cover scale-105" />
-                                </div>
-                            )}
-                            <div className="max-w-4xl mx-auto px-6 py-16">
-                                <h1 className="text-5xl md:text-7xl font-black text-foreground mb-8 tracking-tight leading-tight">
-                                    {formData.title || 'Your Title Goes Here'}
-                                </h1>
-                                <div className="flex flex-wrap items-center gap-6 text-muted-foreground border-y border-border py-6 mb-12">
-                                    <div className="flex items-center gap-2">
-                                        <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
-                                            {formData.author?.charAt(0)}
+                        <main className="min-h-screen bg-background text-foreground">
+                            <div className="container mx-auto px-4 py-20 max-w-4xl">
+                                <article className="prose prose-slate dark:prose-invert max-w-none">
+                                    <header className="mb-12 not-prose">
+                                        <button
+                                            onClick={() => setShowPreview(false)}
+                                            className="text-primary hover:underline mb-8 inline-block font-medium"
+                                        >
+                                            ← Back to Editor
+                                        </button>
+                                        {formData.image && (
+                                            <div className="h-[40vh] w-full overflow-hidden rounded-2xl mb-8">
+                                                <img src={formData.image} alt="Hero" className="w-full h-full object-cover" />
+                                            </div>
+                                        )}
+                                        <h1 className="text-4xl md:text-6xl font-black mb-6 text-primary tracking-tight">
+                                            {formData.title || 'Your Title Goes Here'}
+                                        </h1>
+                                        <div className="flex items-center gap-4 text-muted-foreground text-sm md:text-base border-y border-border py-4">
+                                            <span className="font-bold text-foreground">By {formData.author || 'Le Chi Luan'}</span>
+                                            <span>•</span>
+                                            <time>{formData.date}</time>
                                         </div>
-                                        <span className="text-foreground font-bold">{formData.author}</span>
+                                    </header>
+
+                                    <div className="mt-8">
+                                        <BlogRenderer data={formData.content} />
                                     </div>
-                                    <span className="opacity-30">|</span>
-                                    <div className="flex items-center gap-2">
-                                        <FiCalendar /> {formData.date}
-                                    </div>
-                                </div>
-                                <div
-                                    className="prose dark:prose-invert prose-xl max-w-none ck-content"
-                                    dangerouslySetInnerHTML={{ __html: formData.content }}
-                                />
+                                </article>
                             </div>
-                        </div>
+                        </main>
                     </div>
                 ) : (
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
                         {/* Sidebar: Metadata & Controls */}
-                        <div className="lg:col-span-3 space-y-6 order-2 lg:order-1">
+                        <div className="lg:col-span-1 space-y-6 order-2 lg:order-1">
                             {/* Management Card */}
                             <div className="bg-card border border-border p-6 rounded-2xl shadow-xl">
                                 <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
@@ -227,6 +237,25 @@ export default function BlogAdmin() {
                                         className="w-full py-3 bg-secondary/50 text-foreground rounded-xl font-bold hover:bg-secondary transition-all flex items-center justify-center gap-2 border border-border"
                                     >
                                         <FiDownloadCloud className="w-5 h-5 text-primary" /> Fetch Blog Content
+                                    </button>
+                                    <button
+                                        type="button"
+                                        onClick={() => {
+                                            setFormData({
+                                                title: '',
+                                                author: 'Le Chi Luan',
+                                                date: new Date().toISOString().split('T')[0],
+                                                description: '',
+                                                image: '',
+                                                content: {},
+                                                slug: ''
+                                            });
+                                            setEditorKey(Date.now());
+                                            setSearchSlug('');
+                                        }}
+                                        className="w-full py-3 bg-red-500/10 text-red-500 rounded-xl font-bold hover:bg-red-500/20 transition-all border border-red-500/30"
+                                    >
+                                        Clear All
                                     </button>
                                 </div>
                             </div>
@@ -266,7 +295,7 @@ export default function BlogAdmin() {
                                 </div>
 
                                 <div>
-                                    <label className="text-xs font-black uppercase tracking-widest text-muted-foreground mb-2 block">URL Slug</label>
+                                     <label className="text-xs font-black uppercase tracking-widest text-muted-foreground mb-2 block">URL Slug</label>
                                     <div className="relative">
                                         <FiLink className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground" />
                                         <input
@@ -283,7 +312,7 @@ export default function BlogAdmin() {
                         </div>
 
                         {/* Main Editor Section */}
-                        <div className="lg:col-span-9 space-y-8 order-1 lg:order-2">
+                        <div className="lg:col-span-3 space-y-8 order-1 lg:order-2">
                             <div className="bg-card border border-border p-8 rounded-3xl shadow-xl space-y-8">
                                 <div>
                                     <label className="text-xs font-black uppercase tracking-widest text-muted-foreground mb-3 block">Story Headline</label>
@@ -328,11 +357,14 @@ export default function BlogAdmin() {
                                 </div>
 
                                 <div>
-                                    <label className="text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground mb-3 block">Manuscript</label>
+                                    <div className="flex items-center justify-between mb-3">
+                                        <label className="text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground block">Manuscript</label>
+                                    </div>
                                     <div className="rounded-2xl overflow-hidden border border-border bg-background shadow-xl">
                                         <BlogEditor
+                                            key={editorKey}
                                             value={formData.content}
-                                            onChange={(html: string) => setFormData(prev => ({ ...prev, content: html }))}
+                                            onChange={(data: any) => setFormData(prev => ({ ...prev, content: data }))}
                                         />
                                     </div>
                                 </div>

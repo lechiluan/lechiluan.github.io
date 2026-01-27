@@ -6,20 +6,42 @@ import Image from 'next/image';
 
 const Blog = () => {
   const blogsDirectory = path.join(process.cwd(), 'src', 'blogs');
-  const fileNames = fs.readdirSync(blogsDirectory);
+  const fileNames = fs.existsSync(blogsDirectory) ? fs.readdirSync(blogsDirectory) : [];
 
   const blogs = fileNames.map((fileName) => {
-    const slug = fileName.replace(/\.(md|mdx)$/, '');
+    const slug = fileName.replace(/\.(md|mdx|json)$/, '');
     const fullPath = path.join(blogsDirectory, fileName);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
-    const { data } = matter(fileContents);
+
+    let title = '';
+    let date = '';
+    let description = '';
+    let image = '';
+
+    if (fileName.endsWith('.json')) {
+      try {
+        const data = JSON.parse(fileContents);
+        title = data.title;
+        date = data.date;
+        description = data.description;
+        image = data.image;
+      } catch (e) {
+        console.error(`Error parsing JSON for ${fileName}`, e);
+      }
+    } else {
+      const { data } = matter(fileContents);
+      title = data.title;
+      date = data.date;
+      description = data.description;
+      image = data.image;
+    }
 
     return {
       slug,
-      title: data.title,
-      date: data.date,
-      description: data.description || "Read more about this post...",
-      image: data.image || `https://picsum.photos/seed/${slug}/600/400`
+      title: title || 'Untitled',
+      date: date || 'No date',
+      description: description || "Read more about this post...",
+      image: image || `https://picsum.photos/seed/${slug}/600/400`
     };
   });
 

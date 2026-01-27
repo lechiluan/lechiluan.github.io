@@ -1,0 +1,92 @@
+{
+    "title": "Python 2026: Tại sao vẫn là ngôn ngữ hàng đầu cho Backend?",
+    "author": "Le Chi Luan",
+    "date": "2026-01-11",
+    "description": "Đánh giá sức mạnh của Python trong kỷ nguyên AI và các Framework hiện đại như FastAPI.",
+    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1470&auto=format&fit=crop",
+    "content": {
+        "time": 1769495652925,
+        "blocks": [
+            {
+                "id": "header1",
+                "type": "header",
+                "data": {
+                    "text": "Sức mạnh của Python trong Backend",
+                    "level": 2
+                }
+            },
+            {
+                "id": "para1",
+                "type": "paragraph",
+                "data": {
+                    "text": "Python không còn chậm chạp như trước. Với sự ra đời của các runtime như PyPy hay việc tối ưu hóa trong phiên bản 3.12+, Python đang trở lại mạnh mẽ."
+                }
+            },
+            {
+                "id": "header2",
+                "type": "header",
+                "data": {
+                    "text": "FastAPI: Cuộc cách mạng Backend",
+                    "level": 3
+                }
+            },
+            {
+                "id": "para2",
+                "type": "paragraph",
+                "data": {
+                    "text": "FastAPI đã thay đổi cách chúng ta viết API với Python:"
+                }
+            },
+            {
+                "id": "list1",
+                "type": "list",
+                "data": {
+                    "style": "unordered",
+                    "meta": {},
+                    "items": [
+                        {
+                            "content": "<b>Tốc độ:</b> Ngang ngửa với Go và Node.js nhờ hỗ trợ <code>async/await</code>.",
+                            "meta": {},
+                            "items": []
+                        },
+                        {
+                            "content": "<b>Type Checking:</b> Sử dụng Pydantic để đảm bảo dữ liệu luôn đúng.",
+                            "meta": {},
+                            "items": []
+                        },
+                        {
+                            "content": "<b>Auto Docs:</b> Tự động tạo Swagger UI cực kỳ tiện lợi.",
+                            "meta": {},
+                            "items": []
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "code1",
+                "type": "code",
+                "data": {
+                    "code": "from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get(\"/\")\nasync def root():\n    return {\"message\": \"Hello World\"}",
+                    "language": "plaintext"
+                }
+            },
+            {
+                "id": "header3",
+                "type": "header",
+                "data": {
+                    "text": "AI Integration",
+                    "level": 3
+                }
+            },
+            {
+                "id": "para3",
+                "type": "paragraph",
+                "data": {
+                    "text": "Python là ngôn ngữ mặc định cho AI. Việc tích hợp OpenAI hay các mẫu LLM vào hệ thống backend trở nên dễ dàng hơn bao giờ sơ với Python."
+                }
+            }
+        ],
+        "version": "2.31.1"
+    },
+    "slug": "python-backend"
+}

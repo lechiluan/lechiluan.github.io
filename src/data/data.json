@@ -119,6 +119,13 @@
       "url": ""
     },
     {
+      "name": "Ideas Portal",
+      "image": "https://github.com/lechiluan/IdeasPortal/blob/main/img/illustration.jpg?raw=true",
+      "description": "Created an ideas management platform for collecting, organizing, and reviewing submitted ideas within an organization.",
+      "sourceCode": "https://github.com/lechiluan/IdeasPortal",
+      "url": "https://lechiluan.freedev.app/IdeasPortal"
+    },
+    {
       "name": "ATN Store",
       "image": "https://github.com/lechiluan/ATNStore/blob/main/images/atnlogo.gif?raw=true",
       "description": "Built a web-based store management and e-commerce application for managing products, customers, and sales workflows.",
@@ -131,13 +138,6 @@
       "description": "Developed a retail-focused application inspired by Mobile World Group, supporting product browsing and technology device shopping experiences.",
       "sourceCode": "https://github.com/lechiluan/MobileWorldGroup",
       "url": "https://lechiluan.freedev.app/MobileWorldGroup/"
-    },
-    {
-      "name": "Ideas Portal",
-      "image": "https://github.com/lechiluan/IdeasPortal/blob/main/img/illustration.jpg?raw=true",
-      "description": "Created an ideas management platform for collecting, organizing, and reviewing submitted ideas within an organization.",
-      "sourceCode": "https://github.com/lechiluan/IdeasPortal",
-      "url": "https://lechiluan.freedev.app/IdeasPortal"
     }
   ],
   "experience": [

@@ -6,6 +6,7 @@ import matter from 'gray-matter';
 import Link from 'next/link';
 import { calculateDuration, formatDateRange } from '../utils/dateUtils';
 import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
+import { ExternalLink, Github } from 'lucide-react';
 
 export default function Home() {
   const blogsDirectory = path.join(process.cwd(), 'src', 'blogs');
@@ -259,32 +260,57 @@ export default function Home() {
       <section id="projects" className="w-full max-w-5xl mt-10 bg-card rounded-lg shadow-xl p-8 scroll-mt-20">
         <h2 className="text-4xl font-bold text-center mb-10 text-primary">Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {data.projects.map((project, index) => (
-            <div key={index} className="bg-background rounded-lg border border-transparent hover:border-primary/50 shadow-md overflow-hidden transform hover:scale-[1.02] transition duration-300">
-              <Image
-                src={project.image}
-                alt={project.name}
-                width={500}
-                height={300}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-2xl font-semibold text-foreground mb-2">{project.name}</h3>
-                <p className="text-muted-foreground text-base mb-4">
-                  {project.description}
-                </p>
-                {project.link && (
-                  <a
-                    href={project.link}
-                    className="inline-block bg-primary text-primary-foreground px-5 py-2 rounded-full text-sm font-medium hover:bg-primary/90 transition duration-300"
-                    target="_blank" rel="noopener noreferrer"
-                  >
-                    View Project
-                  </a>
-                )}
+          {data.projects.map((project, index) => {
+            const sourceCode = project.sourceCode;
+            const url = project.url;
+
+            return (
+              <div key={index} className="relative flex h-full flex-col rounded-lg border border-transparent bg-background shadow-md transition duration-300 hover:scale-[1.02] hover:border-primary/50">
+                <div className="overflow-hidden rounded-t-lg">
+                  <Image
+                    src={project.image}
+                    alt={project.name}
+                    width={500}
+                    height={300}
+                    className="w-full h-48 object-cover"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="text-2xl font-semibold text-foreground mb-2 line-clamp-2">{project.name}</h3>
+                  <div className="group/description relative mb-5 min-h-[7.5rem]">
+                    <p className="text-base leading-6 text-muted-foreground line-clamp-5">
+                      {project.description}
+                    </p>
+                    <div className="pointer-events-none absolute left-0 top-full z-20 mt-2 hidden w-full rounded-md border border-border bg-popover p-3 text-sm leading-6 text-popover-foreground shadow-xl group-hover/description:block">
+                      {project.description}
+                    </div>
+                  </div>
+                  <div className="mt-auto grid grid-cols-1 gap-3 sm:grid-cols-2">
+                    {sourceCode && (
+                      <a
+                        href={sourceCode}
+                        className="inline-flex h-10 items-center justify-center gap-2 rounded-full bg-primary px-4 text-sm font-medium text-primary-foreground transition duration-300 hover:bg-primary/90"
+                        target="_blank" rel="noopener noreferrer"
+                      >
+                        <Github className="h-4 w-4" aria-hidden="true" />
+                        Source
+                      </a>
+                    )}
+                    {url && (
+                      <a
+                        href={url}
+                        className="inline-flex h-10 items-center justify-center gap-2 rounded-full border border-primary/40 px-4 text-sm font-medium text-primary transition duration-300 hover:bg-primary hover:text-primary-foreground"
+                        target="_blank" rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="h-4 w-4" aria-hidden="true" />
+                        View
+                      </a>
+                    )}
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 

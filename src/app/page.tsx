@@ -265,7 +265,7 @@ export default function Home() {
             const url = project.url;
 
             return (
-              <div key={index} className="relative flex h-full flex-col rounded-lg border border-transparent bg-background shadow-md transition duration-300 hover:scale-[1.02] hover:border-primary/50">
+              <div key={index} className="relative flex h-full flex-col rounded-lg border border-transparent bg-background shadow-md transition duration-300 hover:z-50 hover:scale-[1.02] hover:border-primary/50">
                 <div className="overflow-hidden rounded-t-lg">
                   <Image
                     src={project.image}
@@ -277,11 +277,11 @@ export default function Home() {
                 </div>
                 <div className="flex flex-1 flex-col p-6">
                   <h3 className="text-2xl font-semibold text-foreground mb-2 line-clamp-2">{project.name}</h3>
-                  <div className="group/description relative mb-5 min-h-[7.5rem]">
-                    <p className="text-base leading-6 text-muted-foreground line-clamp-5">
+                  <div className="group/description relative mb-5 min-h-[4.5rem]">
+                    <p className="text-base leading-6 text-muted-foreground line-clamp-3">
                       {project.description}
                     </p>
-                    <div className="pointer-events-none absolute left-0 top-full z-20 mt-2 hidden w-full rounded-md border border-border bg-popover p-3 text-sm leading-6 text-popover-foreground shadow-xl group-hover/description:block">
+                    <div className="pointer-events-none absolute left-0 top-full z-50 mt-2 hidden w-full rounded-md border border-border bg-popover p-3 text-sm leading-6 text-popover-foreground shadow-xl group-hover/description:block">
                       {project.description}
                     </div>
                   </div>

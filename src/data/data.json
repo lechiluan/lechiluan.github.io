@@ -119,23 +119,30 @@
       "url": ""
     },
     {
+      "name": "FPT Book",
+      "image": "https://github.com/lechiluan/FPTBook/blob/main/FPTBook/Logo/FPTBookLogo.png?raw=true",
+      "description": "Built an online bookstore for FPT University using ASP.NET MVC 5 and Entity Framework. Features include book catalog browsing, category filtering, search by book, author, or category, user authentication, shopping cart, checkout, order history, feedback, and admin management for books, users, authors, publishers, categories, and orders.",
+      "sourceCode": "https://github.com/lechiluan/FPTBook",
+      "url": ""
+    },
+    {
       "name": "Ideas Portal",
       "image": "https://github.com/lechiluan/IdeasPortal/blob/main/img/illustration.jpg?raw=true",
-      "description": "Created an ideas management platform for collecting, organizing, and reviewing submitted ideas within an organization.",
+      "description": "Built a PHP-based ideas management system for university departments with Staff, Quality Assurance Coordinator, and Quality Assurance Manager roles. Features include topic deadlines, anonymous idea submission, file uploads, likes/dislikes, comments, email notifications, idea export to CSV, document downloads, and admin management for accounts, roles, departments, and topics.",
       "sourceCode": "https://github.com/lechiluan/IdeasPortal",
       "url": "https://lechiluan.freedev.app/IdeasPortal"
     },
     {
       "name": "ATN Store",
       "image": "https://github.com/lechiluan/ATNStore/blob/main/images/atnlogo.gif?raw=true",
-      "description": "Built a web-based store management and e-commerce application for managing products, customers, and sales workflows.",
+      "description": "Developed a PHP and PostgreSQL toy store application with product browsing, category pages, search, product details, customer registration/login, session-based cart, checkout with delivery and payment selection, order tracking, feedback, and an admin dashboard for products, categories, suppliers, branches, customers, orders, and revenue.",
       "sourceCode": "https://github.com/lechiluan/ATNStore",
       "url": "https://lechiluan.freedev.app/ATNStore/"
     },
     {
       "name": "Mobile World Group",
       "image": "https://github.com/lechiluan/MobileWorldGroup/blob/main/images/MobileWorldLogo.png?raw=true",
-      "description": "Developed a retail-focused application inspired by Mobile World Group, supporting product browsing and technology device shopping experiences.",
+      "description": "Created a PHP and MySQL retail website inspired by Mobile World Group for browsing smartphones, tablets, watches, and accessories. Features include product search, category filtering, product details, user registration/login, cart management with stock checks, checkout with delivery information, order history, feedback, and admin tools for products, categories, customers, orders, and reports.",
       "sourceCode": "https://github.com/lechiluan/MobileWorldGroup",
       "url": "https://lechiluan.freedev.app/MobileWorldGroup/"
     }

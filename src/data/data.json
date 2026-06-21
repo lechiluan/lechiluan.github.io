@@ -109,58 +109,64 @@
       "image": "/images/projects/visai_logo.png",
       "description": "Yes4All Hackathon - Developed an AI agent to assess delivery package damage and identify carrier vs. vendor responsibility, enabling claim verification for returned goods. Uses Computer Vision and OpenAI Vision.",
       "sourceCode": "https://github.com/lechiluan/VisAI",
-      "url": ""
+      "url": "",
+      "typeProject": "Personal Project"
     },
     {
       "name": "LCL Shop",
       "image": "https://github.com/lechiluan/ecommerce/blob/main/main/static/main/images/main/homepage.png?raw=true",
       "description": "Developed an ecommerce system for selling technology devices with chatbot integration and data analysis (Final Year Project). Features include product recommendations, export invoice, and chatbots using Django and Dialogflow.",
       "sourceCode": "https://github.com/lechiluan/ecommerce",
-      "url": ""
+      "url": "",
+      "typeProject": "Personal Project"
     },
     {
       "name": "FPT Book",
       "image": "https://github.com/lechiluan/FPTBook/blob/main/FPTBook/Logo/FPTBookLogo.png?raw=true",
       "description": "Built an online bookstore for FPT University using ASP.NET MVC 5 and Entity Framework. Features include book catalog browsing, category filtering, search by book, author, or category, user authentication, shopping cart, checkout, order history, feedback, and admin management for books, users, authors, publishers, categories, and orders.",
       "sourceCode": "https://github.com/lechiluan/FPTBook",
-      "url": ""
+      "url": "",
+      "typeProject": "Personal Project"
     },
     {
       "name": "Ideas Portal",
       "image": "https://github.com/lechiluan/IdeasPortal/blob/main/img/illustration.jpg?raw=true",
       "description": "Built a PHP-based ideas management system for university departments with Staff, Quality Assurance Coordinator, and Quality Assurance Manager roles. Features include topic deadlines, anonymous idea submission, file uploads, likes/dislikes, comments, email notifications, idea export to CSV, document downloads, and admin management for accounts, roles, departments, and topics.",
       "sourceCode": "https://github.com/lechiluan/IdeasPortal",
-      "url": "https://lechiluan.freedev.app/IdeasPortal"
+      "url": "https://lechiluan.freedev.app/IdeasPortal",
+      "typeProject": "Personal Project"
     },
     {
       "name": "ATN Store",
       "image": "https://github.com/lechiluan/ATNStore/blob/main/images/atnlogo.gif?raw=true",
       "description": "Developed a PHP and PostgreSQL toy store application with product browsing, category pages, search, product details, customer registration/login, session-based cart, checkout with delivery and payment selection, order tracking, feedback, and an admin dashboard for products, categories, suppliers, branches, customers, orders, and revenue.",
       "sourceCode": "https://github.com/lechiluan/ATNStore",
-      "url": "https://lechiluan.freedev.app/ATNStore/"
+      "url": "https://lechiluan.freedev.app/ATNStore/",
+      "typeProject": "Personal Project"
     },
     {
       "name": "Mobile World Group",
       "image": "https://github.com/lechiluan/MobileWorldGroup/blob/main/images/MobileWorldLogo.png?raw=true",
       "description": "Created a PHP and MySQL retail website inspired by Mobile World Group for browsing smartphones, tablets, watches, and accessories. Features include product search, category filtering, product details, user registration/login, cart management with stock checks, checkout with delivery information, order history, feedback, and admin tools for products, categories, customers, orders, and reports.",
       "sourceCode": "https://github.com/lechiluan/MobileWorldGroup",
-      "url": "https://lechiluan.freedev.app/MobileWorldGroup/"
+      "url": "https://lechiluan.freedev.app/MobileWorldGroup/",
+      "typeProject": "Personal Project"
     },
     {
       "name": "UoG Event Portal",
       "image": "https://github.com/ItclubofUoG/PDP_Web_Project/blob/main/Assets/img/bg.login.jpg?raw=true",
-      "description": "Group Project - Built a PHP-based University of Greenwich event attendance portal with user and admin roles, event management, student/member management, RFID device integration, attendance logs, profile updates, and password management.",
+      "description": "Group Projects - Built a PHP-based University of Greenwich event attendance portal with user and admin roles, event management, student/member management, RFID device integration, attendance logs, profile updates, and password management.",
       "sourceCode": "https://github.com/ItclubofUoG/PDP_Web_Project",
       "url": "https://lechiluan.freedev.app/PDP_Web_Project",
-      "group": "Group Project"
+      "typeProject": "Group Projects"
     },
     {
       "name": "IT Club Web",
       "image": "https://github.com/ItclubofUoG/ItClubWeb-Ver1/blob/main/image/lg-club.png?raw=true",
-      "description": "Group Project - Developed a PHP-based IT Club website for University of Greenwich with member login, event listing, profile updates, password changes, user management, device management, attendance logs, and Excel export support.",
+      "description": "Group Projects - Developed a PHP-based IT Club website for University of Greenwich with member login, event listing, profile updates, password changes, user management, device management, attendance logs, and Excel export support.",
       "sourceCode": "https://github.com/ItclubofUoG/ItClubWeb-Ver1",
       "url": "https://lechiluan.freedev.app/ItClubWeb-Ver1/",
-      "group": "Group Project"
+      "typeProject": "Group Projects"
     }
   ],
   "experience": [

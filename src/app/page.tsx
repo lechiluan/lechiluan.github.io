@@ -48,8 +48,8 @@ export default function Home() {
       image: image || `https://picsum.photos/seed/${slug}/600/400`
     };
   });
-  const myProjects = data.projects.filter((project) => !("group" in project));
-  const groupProjects = data.projects.filter((project) => "group" in project && project.group === "Group Project");
+  const myProjects = data.projects.filter((project) => project.typeProject === "Personal Project");
+  const groupProjects = data.projects.filter((project) => project.typeProject === "Group Projects");
 
   const renderProjectCard = (project: (typeof data.projects)[number], index: number) => {
     const sourceCode = project.sourceCode;
@@ -63,11 +63,11 @@ export default function Home() {
             alt={project.name}
             width={500}
             height={300}
-            className="w-full h-48 object-cover"
+            className="h-44 w-full object-cover sm:h-48"
           />
         </div>
-        <div className="flex flex-1 flex-col p-6">
-          <h3 className="text-2xl font-semibold text-foreground mb-2 line-clamp-2">{project.name}</h3>
+        <div className="flex flex-1 flex-col p-5 sm:p-6">
+          <h3 className="mb-2 line-clamp-2 text-xl font-semibold text-foreground sm:text-2xl">{project.name}</h3>
           <div className="group/description relative mb-5 min-h-[4.5rem]">
             <p className="text-base leading-6 text-muted-foreground line-clamp-3">
               {project.description}
@@ -104,36 +104,36 @@ export default function Home() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-8 md:p-24 bg-background text-foreground">
+    <main className="flex min-h-screen flex-col items-center justify-center bg-background px-4 py-8 text-foreground sm:px-6 md:px-12 md:py-16 lg:px-24">
       {/* Hero Section */}
-      <section id="hero" className="w-full max-w-5xl text-center py-20">
+      <section id="hero" className="w-full max-w-5xl py-12 text-center sm:py-16 md:py-20">
         <div className="flex flex-col items-center">
           <Image
             src={data.hero.profileImage}
             alt="My Picture"
-            width={180}
-            height={180}
+            width={160}
+            height={160}
             className="rounded-full border-4 border-blue-500 shadow-lg"
           />
-          <h1 className="text-5xl font-extrabold mt-6 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+          <h1 className="mt-6 text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary sm:text-5xl">
             {data.hero.name}
           </h1>
-          <p className="text-2xl mt-3 font-light text-muted-foreground">
+          <p className="mt-3 text-xl font-light text-muted-foreground sm:text-2xl">
             {data.hero.title}
           </p>
-          <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground text-justify">
+          <p className="mt-8 max-w-3xl text-justify text-base leading-relaxed text-muted-foreground hyphens-auto sm:text-lg">
             {data.hero.bio}
           </p>
-          <div className="mt-10 flex space-x-6">
+          <div className="mt-10 flex w-full flex-col gap-4 sm:w-auto sm:flex-row sm:gap-6">
             <a
               href="#experience"
-              className="px-8 py-3 bg-primary text-primary-foreground rounded-full text-lg font-semibold hover:bg-primary/90 transition duration-300 transform hover:scale-105 shadow-lg"
+              className="w-full px-6 py-3 bg-primary text-primary-foreground rounded-full text-base font-semibold hover:bg-primary/90 transition duration-300 transform hover:scale-105 shadow-lg sm:w-auto sm:px-8 sm:text-lg"
             >
               View My Experience
             </a>
             <a
               href="#contact"
-              className="px-8 py-3 border border-primary text-primary rounded-full text-lg font-semibold hover:bg-primary hover:text-primary-foreground transition duration-300 transform hover:scale-105 shadow-lg"
+              className="w-full px-6 py-3 border border-primary text-primary rounded-full text-base font-semibold hover:bg-primary hover:text-primary-foreground transition duration-300 transform hover:scale-105 shadow-lg sm:w-auto sm:px-8 sm:text-lg"
             >
               Get in Touch
             </a>
@@ -142,11 +142,11 @@ export default function Home() {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="w-full max-w-5xl mt-10 p-8 bg-card rounded-lg shadow-xl scroll-mt-20">
-        <h2 className="text-4xl font-bold text-center mb-10 text-primary">Education</h2>
+      <section id="education" className="w-full max-w-5xl mt-8 rounded-lg bg-card p-4 shadow-xl scroll-mt-20 sm:p-6 md:mt-10 md:p-8">
+        <h2 className="mb-8 text-center text-3xl font-bold text-primary sm:text-4xl md:mb-10">Education</h2>
         <div className="space-y-6">
           {data.education.map((edu, index) => (
-            <div key={index} className="flex gap-4 p-6 bg-background rounded-lg border border-transparent hover:border-primary/50 hover:bg-accent/5 hover:shadow-lg transition-all duration-300">
+            <div key={index} className="flex flex-col gap-4 rounded-lg border border-transparent bg-background p-4 transition-all duration-300 hover:border-primary/50 hover:bg-accent/5 hover:shadow-lg sm:flex-row sm:p-6">
               {/* School Logo */}
               <div className="flex-shrink-0">
                 <Image
@@ -161,12 +161,12 @@ export default function Home() {
               {/* Education Details */}
               <div className="flex-grow">
                 {/* Degree */}
-                <h3 className="text-xl font-semibold text-foreground mb-1">
+                <h3 className="text-lg font-semibold text-foreground mb-1 sm:text-xl">
                   {edu.degree}
                 </h3>
 
                 {/* Institution Name */}
-                <p className="text-lg text-foreground mb-2">
+                <p className="text-base text-foreground mb-2 sm:text-lg">
                   {edu.institution}
                 </p>
 
@@ -176,7 +176,7 @@ export default function Home() {
                 </div>
 
                 {/* Notes/Honors */}
-                <ul className="space-y-1 text-base text-card-foreground mt-2">
+                <ul className="space-y-1 text-sm text-card-foreground mt-2 sm:text-base">
                   {Array.isArray(edu.notes) ? (
                     edu.notes.map((note, i) => (
                       <li key={i} className="flex gap-2">
@@ -198,11 +198,11 @@ export default function Home() {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="w-full max-w-5xl mt-10 bg-card rounded-lg shadow-xl p-8 scroll-mt-20">
-        <h2 className="text-4xl font-bold text-center mb-10 text-primary">Experience</h2>
+      <section id="experience" className="w-full max-w-5xl mt-8 rounded-lg bg-card p-4 shadow-xl scroll-mt-20 sm:p-6 md:mt-10 md:p-8">
+        <h2 className="mb-8 text-center text-3xl font-bold text-primary sm:text-4xl md:mb-10">Experience</h2>
         <div className="space-y-6">
           {data.experience.map((exp, index) => (
-            <div key={index} className="flex gap-4 p-6 bg-background rounded-lg border border-transparent hover:border-primary/50 hover:bg-accent/5 hover:shadow-lg transition-all duration-300">
+            <div key={index} className="flex flex-col gap-4 rounded-lg border border-transparent bg-background p-4 transition-all duration-300 hover:border-primary/50 hover:bg-accent/5 hover:shadow-lg sm:flex-row sm:p-6">
               {/* Company Logo */}
               <div className="flex-shrink-0">
                 <Image
@@ -217,12 +217,12 @@ export default function Home() {
               {/* Experience Details */}
               <div className="flex-grow">
                 {/* Job Title */}
-                <h3 className="text-xl font-semibold text-foreground mb-1">
+                <h3 className="text-lg font-semibold text-foreground mb-1 sm:text-xl">
                   {exp.title}
                 </h3>
 
                 {/* Company Name */}
-                <p className="text-lg text-foreground mb-2">
+                <p className="text-base text-foreground mb-2 sm:text-lg">
                   {exp.company}
                 </p>
 
@@ -243,7 +243,7 @@ export default function Home() {
                       {/* Project Headline (Title + Description) */}
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
-                        <div className="text-base leading-relaxed">
+                        <div className="text-sm leading-relaxed sm:text-base">
                           <span className="font-bold text-foreground mr-2">
                             {project.title}
                           </span>
@@ -257,11 +257,11 @@ export default function Home() {
 
                       {/* Project Details */}
                       {project.details && project.details.length > 0 && (
-                        <ul className="space-y-2 ml-4">
+                        <ul className="ml-1 space-y-2 sm:ml-4">
                           {project.details.map((detail: string, j: number) => (
                             <li key={j} className="flex gap-3">
                               <span className="w-1.5 h-1.5 border border-primary/50 rotate-45 mt-2.5 flex-shrink-0" />
-                              <span className="text-base text-foreground/90 leading-relaxed">
+                              <span className="text-sm text-foreground/90 leading-relaxed sm:text-base">
                                 {detail}
                               </span>
                             </li>
@@ -288,8 +288,8 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="w-full max-w-5xl mt-10 bg-card rounded-lg shadow-xl p-8 scroll-mt-20">
-        <h2 className="text-4xl font-bold text-center mb-10 text-primary">Skills</h2>
+      <section id="skills" className="w-full max-w-5xl mt-8 rounded-lg bg-card p-4 shadow-xl scroll-mt-20 sm:p-6 md:mt-10 md:p-8">
+        <h2 className="mb-8 text-center text-3xl font-bold text-primary sm:text-4xl md:mb-10">Skills</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {data.skills.map((skill, index) => (
             <div key={index} className="flex items-center gap-4 p-4 bg-background rounded-xl border border-border/50 hover:border-primary/50 hover:bg-accent/5 hover:shadow-md transition-all duration-300 group">
@@ -311,15 +311,15 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="w-full max-w-5xl mt-10 bg-card rounded-lg shadow-xl p-8 scroll-mt-20">
-        <h2 className="text-4xl font-bold text-center mb-10 text-primary">Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <section id="projects" className="w-full max-w-5xl mt-8 rounded-lg bg-card p-4 shadow-xl scroll-mt-20 sm:p-6 md:mt-10 md:p-8">
+        <h2 className="mb-8 text-center text-3xl font-bold text-primary sm:text-4xl md:mb-10">Projects</h2>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3 lg:gap-10">
           {myProjects.map(renderProjectCard)}
         </div>
         {groupProjects.length > 0 && (
           <>
-            <h3 className="mt-14 mb-8 text-3xl font-bold text-center text-primary">Group Project</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <h3 className="mt-12 mb-6 text-center text-2xl font-bold text-primary sm:text-3xl md:mt-14 md:mb-8">Group Projects</h3>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3 lg:gap-10">
               {groupProjects.map(renderProjectCard)}
             </div>
           </>
@@ -327,17 +327,17 @@ export default function Home() {
       </section>
 
       {/* Blog Section */}
-      <section id="blog" className="w-full max-w-6xl mt-10 scroll-mt-20">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+      <section id="blog" className="w-full max-w-6xl mt-8 scroll-mt-20 md:mt-10">
+        <div className="mb-10 text-center md:mb-16">
+          <h2 className="mb-4 text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary sm:text-5xl">
             Blog
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="mx-auto max-w-2xl text-base text-muted-foreground sm:text-xl">
             Thoughts, insights, and stories from the world of software engineering and design.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-12">
+        <div className="mb-12 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3 lg:gap-10">
           {blogs.slice(0, 3).map((post) => (
             <Link
               key={post.slug}
@@ -353,7 +353,7 @@ export default function Home() {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
-              <div className="p-8">
+              <div className="p-5 sm:p-8">
                 <p className="text-sm font-semibold text-primary mb-3">
                   {post.date}
                 </p>
@@ -398,17 +398,17 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="w-full max-w-5xl mt-10 bg-card rounded-lg shadow-xl p-8 mb-20 scroll-mt-20">
-        <h2 className="text-4xl font-bold text-center mb-6 text-primary">Contact Me</h2>
-        <p className="text-center text-lg text-muted-foreground max-w-2xl mx-auto mb-12">
+      <section id="contact" className="w-full max-w-5xl mt-8 mb-16 rounded-lg bg-card p-4 shadow-xl scroll-mt-20 sm:p-6 md:mt-10 md:mb-20 md:p-8">
+        <h2 className="mb-6 text-center text-3xl font-bold text-primary sm:text-4xl">Contact Me</h2>
+        <p className="mx-auto mb-10 max-w-2xl text-center text-base text-muted-foreground sm:text-lg md:mb-12">
           I am always open to new opportunities and collaborations. Feel free to reach out through any of the platforms below!
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
           {/* Email Card */}
           <a
             href={`mailto:${data.contact.email}`}
-            className="flex flex-col items-center p-8 bg-background rounded-xl border border-border hover:border-primary hover:shadow-2xl transition-all duration-300 group"
+            className="flex flex-col items-center rounded-xl border border-border bg-background p-6 transition-all duration-300 hover:border-primary hover:shadow-2xl group sm:p-8"
           >
             <div className="p-4 bg-primary/10 rounded-full mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
               <FaEnvelope className="w-8 h-8" />
@@ -422,7 +422,7 @@ export default function Home() {
             href={data.contact.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-col items-center p-8 bg-background rounded-xl border border-border hover:border-primary hover:shadow-2xl transition-all duration-300 group"
+            className="flex flex-col items-center rounded-xl border border-border bg-background p-6 transition-all duration-300 hover:border-primary hover:shadow-2xl group sm:p-8"
           >
             <div className="p-4 bg-primary/10 rounded-full mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
               <FaLinkedin className="w-8 h-8" />
@@ -436,7 +436,7 @@ export default function Home() {
             href={data.contact.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-col items-center p-8 bg-background rounded-xl border border-border hover:border-primary hover:shadow-2xl transition-all duration-300 group"
+            className="flex flex-col items-center rounded-xl border border-border bg-background p-6 transition-all duration-300 hover:border-primary hover:shadow-2xl group sm:p-8"
           >
             <div className="p-4 bg-primary/10 rounded-full mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
               <FaGithub className="w-8 h-8" />

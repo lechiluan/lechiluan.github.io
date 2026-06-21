@@ -41,11 +41,20 @@
     }
 
     .projects-title {
-      margin-bottom: 40px;
+      margin-bottom: 28px;
       color: var(--primary);
       text-align: center;
-      font-size: 40px;
-      line-height: 1.1;
+      font-size: 30px;
+      line-height: 1.2;
+      font-weight: 800;
+    }
+
+    .projects-subtitle {
+      margin: 48px 0 28px;
+      color: var(--primary);
+      text-align: center;
+      font-size: 30px;
+      line-height: 1.2;
       font-weight: 800;
     }
 
@@ -130,6 +139,10 @@
       margin-top: auto;
     }
 
+    .project-actions.single {
+      grid-template-columns: 1fr;
+    }
+
     .project-button {
       display: inline-flex;
       align-items: center;
@@ -175,7 +188,11 @@
       }
 
       .projects-title {
-        font-size: 34px;
+        font-size: 28px;
+      }
+
+      .projects-subtitle {
+        font-size: 28px;
       }
 
       .projects-grid {
@@ -187,7 +204,7 @@
 </head>
 <body>
   <main class="projects-section">
-    <h1 class="projects-title">Projects</h1>
+    <h1 class="projects-title">My Project</h1>
 
     <section class="projects-grid" aria-label="Project list">
       <article class="project-card">
@@ -238,6 +255,42 @@
         </div>
       </article>
 
+    </section>
+
+    <h2 class="projects-subtitle">Group Project</h2>
+
+    <section class="projects-grid" aria-label="Group project list">
+      <article class="project-card">
+        <div class="project-image-wrap">
+          <img class="project-image" src="https://github.com/ItclubofUoG/PDP_Web_Project/blob/main/Assets/img/bg.login.jpg?raw=true" alt="UoG Event Portal event photo">
+        </div>
+        <div class="project-content">
+          <h2 class="project-name">UoG Event Portal</h2>
+          <div class="description-wrap">
+            <p class="project-description">Built a PHP-based University of Greenwich event attendance portal with user and admin roles, event management, student/member management, RFID device integration, attendance logs, profile updates, and password management.</p>
+          </div>
+          <div class="project-actions">
+            <a class="project-button" href="https://github.com/ItclubofUoG/PDP_Web_Project" target="_blank" rel="noopener noreferrer">Source</a>
+            <a class="project-button secondary" href="https://lechiluan.freedev.app/PDP_Web_Project" target="_blank" rel="noopener noreferrer">View</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-image-wrap">
+          <img class="project-image" src="https://github.com/ItclubofUoG/ItClubWeb-Ver1/blob/main/image/lg-club.png?raw=true" alt="IT Club Web club logo">
+        </div>
+        <div class="project-content">
+          <h2 class="project-name">IT Club Web</h2>
+          <div class="description-wrap">
+            <p class="project-description">Developed a PHP-based IT Club website for University of Greenwich with member login, event listing, profile updates, password changes, user management, device management, attendance logs, and Excel export support.</p>
+          </div>
+          <div class="project-actions">
+            <a class="project-button" href="https://github.com/ItclubofUoG/ItClubWeb-Ver1/" target="_blank" rel="noopener noreferrer">Source</a>
+            <a class="project-button secondary" href="https://lechiluan.freedev.app/ItClubWeb-Ver1/" target="_blank" rel="noopener noreferrer">View</a>
+          </div>
+        </div>
+      </article>
     </section>
   </main>
 </body>

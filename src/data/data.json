@@ -145,6 +145,22 @@
       "description": "Created a PHP and MySQL retail website inspired by Mobile World Group for browsing smartphones, tablets, watches, and accessories. Features include product search, category filtering, product details, user registration/login, cart management with stock checks, checkout with delivery information, order history, feedback, and admin tools for products, categories, customers, orders, and reports.",
       "sourceCode": "https://github.com/lechiluan/MobileWorldGroup",
       "url": "https://lechiluan.freedev.app/MobileWorldGroup/"
+    },
+    {
+      "name": "UoG Event Portal",
+      "image": "https://github.com/ItclubofUoG/PDP_Web_Project/blob/main/Assets/img/bg.login.jpg?raw=true",
+      "description": "Group Project - Built a PHP-based University of Greenwich event attendance portal with user and admin roles, event management, student/member management, RFID device integration, attendance logs, profile updates, and password management.",
+      "sourceCode": "https://github.com/ItclubofUoG/PDP_Web_Project",
+      "url": "https://lechiluan.freedev.app/PDP_Web_Project",
+      "group": "Group Project"
+    },
+    {
+      "name": "IT Club Web",
+      "image": "https://github.com/ItclubofUoG/ItClubWeb-Ver1/blob/main/image/lg-club.png?raw=true",
+      "description": "Group Project - Developed a PHP-based IT Club website for University of Greenwich with member login, event listing, profile updates, password changes, user management, device management, attendance logs, and Excel export support.",
+      "sourceCode": "https://github.com/ItclubofUoG/ItClubWeb-Ver1",
+      "url": "https://lechiluan.freedev.app/ItClubWeb-Ver1/",
+      "group": "Group Project"
     }
   ],
   "experience": [

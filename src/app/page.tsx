@@ -48,6 +48,60 @@ export default function Home() {
       image: image || `https://picsum.photos/seed/${slug}/600/400`
     };
   });
+  const myProjects = data.projects.filter((project) => !("group" in project));
+  const groupProjects = data.projects.filter((project) => "group" in project && project.group === "Group Project");
+
+  const renderProjectCard = (project: (typeof data.projects)[number], index: number) => {
+    const sourceCode = project.sourceCode;
+    const url = project.url;
+
+    return (
+      <div key={`${project.name}-${index}`} className="relative flex h-full flex-col rounded-lg border border-transparent bg-background shadow-[0_12px_30px_rgba(15,23,42,0.12)] transition duration-300 dark:shadow-[0_18px_42px_rgba(0,0,0,0.46),0_0_0_1px_rgba(148,163,184,0.08)] hover:z-50 hover:scale-[1.02] hover:border-primary/50 hover:shadow-[0_18px_42px_rgba(15,23,42,0.18)] dark:hover:shadow-[0_24px_56px_rgba(0,0,0,0.58),0_0_0_1px_rgba(90,167,247,0.28)]">
+        <div className="overflow-hidden rounded-t-lg bg-white shadow-[inset_0_-14px_28px_rgba(15,23,42,0.10)] dark:shadow-[0_10px_26px_rgba(0,0,0,0.35),inset_0_-14px_28px_rgba(15,23,42,0.14)]">
+          <Image
+            src={project.image}
+            alt={project.name}
+            width={500}
+            height={300}
+            className="w-full h-48 object-cover"
+          />
+        </div>
+        <div className="flex flex-1 flex-col p-6">
+          <h3 className="text-2xl font-semibold text-foreground mb-2 line-clamp-2">{project.name}</h3>
+          <div className="group/description relative mb-5 min-h-[4.5rem]">
+            <p className="text-base leading-6 text-muted-foreground line-clamp-3">
+              {project.description}
+            </p>
+            <div className="pointer-events-none absolute left-0 top-full z-50 mt-2 hidden w-full rounded-md border border-border bg-popover p-3 text-sm leading-6 text-popover-foreground shadow-xl group-hover/description:block">
+              {project.description}
+            </div>
+          </div>
+          <div className="mt-auto grid grid-cols-1 gap-3 sm:grid-cols-2">
+            {sourceCode && (
+              <a
+                href={sourceCode}
+                className="inline-flex h-10 items-center justify-center gap-2 rounded-full bg-primary px-4 text-sm font-medium text-primary-foreground transition duration-300 hover:bg-primary/90"
+                target="_blank" rel="noopener noreferrer"
+              >
+                <Github className="h-4 w-4" aria-hidden="true" />
+                Source
+              </a>
+            )}
+            {url && (
+              <a
+                href={url}
+                className="inline-flex h-10 items-center justify-center gap-2 rounded-full border border-primary/40 px-4 text-sm font-medium text-primary transition duration-300 hover:bg-primary hover:text-primary-foreground"
+                target="_blank" rel="noopener noreferrer"
+              >
+                <ExternalLink className="h-4 w-4" aria-hidden="true" />
+                View
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+    );
+  };
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-8 md:p-24 bg-background text-foreground">
@@ -260,58 +314,16 @@ export default function Home() {
       <section id="projects" className="w-full max-w-5xl mt-10 bg-card rounded-lg shadow-xl p-8 scroll-mt-20">
         <h2 className="text-4xl font-bold text-center mb-10 text-primary">Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {data.projects.map((project, index) => {
-            const sourceCode = project.sourceCode;
-            const url = project.url;
-
-            return (
-              <div key={index} className="relative flex h-full flex-col rounded-lg border border-transparent bg-background shadow-md transition duration-300 hover:z-50 hover:scale-[1.02] hover:border-primary/50">
-                <div className="overflow-hidden rounded-t-lg">
-                  <Image
-                    src={project.image}
-                    alt={project.name}
-                    width={500}
-                    height={300}
-                    className="w-full h-48 object-cover"
-                  />
-                </div>
-                <div className="flex flex-1 flex-col p-6">
-                  <h3 className="text-2xl font-semibold text-foreground mb-2 line-clamp-2">{project.name}</h3>
-                  <div className="group/description relative mb-5 min-h-[4.5rem]">
-                    <p className="text-base leading-6 text-muted-foreground line-clamp-3">
-                      {project.description}
-                    </p>
-                    <div className="pointer-events-none absolute left-0 top-full z-50 mt-2 hidden w-full rounded-md border border-border bg-popover p-3 text-sm leading-6 text-popover-foreground shadow-xl group-hover/description:block">
-                      {project.description}
-                    </div>
-                  </div>
-                  <div className="mt-auto grid grid-cols-1 gap-3 sm:grid-cols-2">
-                    {sourceCode && (
-                      <a
-                        href={sourceCode}
-                        className="inline-flex h-10 items-center justify-center gap-2 rounded-full bg-primary px-4 text-sm font-medium text-primary-foreground transition duration-300 hover:bg-primary/90"
-                        target="_blank" rel="noopener noreferrer"
-                      >
-                        <Github className="h-4 w-4" aria-hidden="true" />
-                        Source
-                      </a>
-                    )}
-                    {url && (
-                      <a
-                        href={url}
-                        className="inline-flex h-10 items-center justify-center gap-2 rounded-full border border-primary/40 px-4 text-sm font-medium text-primary transition duration-300 hover:bg-primary hover:text-primary-foreground"
-                        target="_blank" rel="noopener noreferrer"
-                      >
-                        <ExternalLink className="h-4 w-4" aria-hidden="true" />
-                        View
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+          {myProjects.map(renderProjectCard)}
         </div>
+        {groupProjects.length > 0 && (
+          <>
+            <h3 className="mt-14 mb-8 text-3xl font-bold text-center text-primary">Group Project</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+              {groupProjects.map(renderProjectCard)}
+            </div>
+          </>
+        )}
       </section>
 
       {/* Blog Section */}

@@ -138,7 +138,7 @@
     },
     {
       "name": "ATN Store",
-      "image": "https://github.com/lechiluan/ATNStore/blob/main/images/atnlogo.gif?raw=true",
+      "image": "https://github.com/lechiluan/ATNStore/blob/main/MySQL/images/atnlogo.gif?raw=true",
       "description": "Developed a PHP and PostgreSQL toy store application with product browsing, category pages, search, product details, customer registration/login, session-based cart, checkout with delivery and payment selection, order tracking, feedback, and an admin dashboard for products, categories, suppliers, branches, customers, orders, and revenue.",
       "sourceCode": "https://github.com/lechiluan/ATNStore",
       "url": "https://lechiluan.freedev.app/ATNStore/",

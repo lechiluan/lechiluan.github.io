@@ -125,7 +125,7 @@
       "image": "https://github.com/lechiluan/FPTBook/blob/main/FPTBook/Logo/FPTBookLogo.png?raw=true",
       "description": "Built an online bookstore for FPT University using ASP.NET MVC 5 and Entity Framework. Features include book catalog browsing, category filtering, search by book, author, or category, user authentication, shopping cart, checkout, order history, feedback, and admin management for books, users, authors, publishers, categories, and orders.",
       "sourceCode": "https://github.com/lechiluan/FPTBook",
-      "url": "",
+      "url": "https://fptbook.somee.com",
       "typeProject": "Personal Project"
     },
     {

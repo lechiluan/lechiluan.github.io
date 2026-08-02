@@ -361,6 +361,52 @@
       ]
     }
   ],
+  "certifications": [
+    {
+      "name": "Cloud Architecture Fundamentals (Example)",
+      "issuer": "Example Learning Academy",
+      "logo": "https://placehold.co/112x112/png?text=CLA",
+      "certificateImage": "https://placehold.co/1200x750/png?text=Cloud+Architecture+Certificate",
+      "issueDate": "2026-06",
+      "expirationDate": "2029-06",
+      "credentialId": "EXAMPLE-CLA-2026-8F4A92D7C1",
+      "credentialUrl": "https://example.com/credentials/cloud-architecture-fundamentals",
+      "skills": [
+        "Cloud Architecture",
+        "Scalability",
+        "High Availability"
+      ]
+    },
+    {
+      "name": "Backend Engineering Professional Certificate (Example)",
+      "issuer": "Example Developer Institute",
+      "logo": "https://placehold.co/112x112/png?text=BE",
+      "certificateImage": "https://placehold.co/1200x750/png?text=Backend+Engineering+Certificate",
+      "issueDate": "2025-11",
+      "expirationDate": null,
+      "credentialId": "EXAMPLE-BE-2025-34C7E91B",
+      "credentialUrl": "https://example.com/credentials/backend-engineering-professional",
+      "skills": [
+        "Node.js",
+        "Python",
+        "PostgreSQL",
+        "Microservices"
+      ]
+    },
+    {
+      "name": "Modern TypeScript Development (Example)",
+      "issuer": "Example Code Academy",
+      "logo": "https://placehold.co/112x112/png?text=TS",
+      "certificateImage": "https://placehold.co/1200x750/png?text=TypeScript+Certificate",
+      "issueDate": "2025-04",
+      "credentialUrl": "https://example.com/credentials/modern-typescript-development",
+      "skills": [
+        "TypeScript",
+        "Testing",
+        "API Design"
+      ]
+    }
+  ],
   "contact": {
     "email": "chiluan6601@gmail.com",
     "linkedin": "https://www.linkedin.com/in/lechiluan",

@@ -6,7 +6,34 @@ import matter from 'gray-matter';
 import Link from 'next/link';
 import { calculateDuration, formatDateRange } from '../utils/dateUtils';
 import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
-import { ExternalLink, Github } from 'lucide-react';
+import { Award, ExternalLink, Github } from 'lucide-react';
+import CertificationGallery from '../components/CertificationGallery';
+
+type Certification = {
+  name: string;
+  issuer: string;
+  logo: string;
+  certificateImage: string;
+  issueDate: string;
+  expirationDate?: string | null;
+  credentialId?: string;
+  credentialUrl: string;
+  skills: string[];
+};
+
+const formatCertificationDate = (value: string) => {
+  const [year, month] = value.split('-').map(Number);
+
+  if (!year || !month) {
+    return value;
+  }
+
+  return new Intl.DateTimeFormat('en', {
+    month: 'short',
+    year: 'numeric',
+    timeZone: 'UTC',
+  }).format(new Date(Date.UTC(year, month - 1)));
+};
 
 export default function Home() {
   const blogsDirectory = path.join(process.cwd(), 'src', 'blogs');
@@ -50,6 +77,9 @@ export default function Home() {
   });
   const myProjects = data.projects.filter((project) => project.typeProject === "Personal Project");
   const groupProjects = data.projects.filter((project) => project.typeProject === "Group Projects");
+  const certifications = [...(data.certifications as Certification[])].sort(
+    (a, b) => b.issueDate.localeCompare(a.issueDate),
+  );
 
   const renderProjectCard = (project: (typeof data.projects)[number], index: number) => {
     const sourceCode = project.sourceCode;
@@ -285,6 +315,30 @@ export default function Home() {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* Certifications Section */}
+      <section id="certifications" className="w-full max-w-5xl mt-8 rounded-lg bg-card p-4 shadow-xl scroll-mt-20 sm:p-6 md:mt-10 md:p-8">
+        <div className="mb-8 text-center md:mb-10">
+          <h2 className="text-3xl font-bold text-primary sm:text-4xl">Certifications</h2>
+          <p className="mx-auto mt-3 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+            Professional credentials that reflect my commitment to continuous learning.
+          </p>
+        </div>
+
+        {certifications.length > 0 ? (
+          <CertificationGallery certifications={certifications} />
+        ) : (
+          <div className="flex flex-col items-center rounded-xl border border-dashed border-border bg-background px-5 py-10 text-center sm:px-8">
+            <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-primary">
+              <Award className="h-7 w-7" aria-hidden="true" />
+            </div>
+            <h3 className="text-lg font-semibold text-foreground">Credentials coming soon</h3>
+            <p className="mt-2 max-w-md text-sm leading-relaxed text-muted-foreground sm:text-base">
+              Verified certification details will be added here.
+            </p>
+          </div>
+        )}
       </section>
 
       {/* Skills Section */}
